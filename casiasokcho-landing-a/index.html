@@ -5,316 +5,571 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Cassia Sokcho 7 Days Club</title>
   <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-  <!-- HEADER -->
-  <header id="header">
+  <!-- HEADER (편집 불가 영역) -->
+  <header id="layout-header">
     <div class="header-inner">
       <h1 class="logo">
         <a href="#">
-          <img src="images/common/logo_white.svg" alt="CASIA">
+          <img data-object="FIXATION" src="images/common/logo_white.svg" alt="CASSIA SOKCHO">
         </a>
       </h1>
-      <button type="button" class="btn-menu" aria-label="메뉴 열기">
-        <span></span><span></span><span></span>
-      </button>
     </div>
   </header>
 
-  <!-- MAIN -->
-  <main id="main">
+  <!-- CONTENT (편집 가능 영역) -->
+  <main id="layout-content">
 
     <!-- HERO -->
     <section class="sec sec-hero">
-      <div class="hero-bg">
-        <img src="images/main/main-visual.jpg" alt="">
+      <div class="hero-media">
+        <video data-object="FIXATION" autoplay muted loop playsinline poster="images/main/main-visual.jpg">
+          <source src="images/main/모델영상_편집_compressed.mp4" type="video/mp4">
+        </video>
       </div>
-      <div class="hero-text">
-        <p class="hero-eyebrow">Cassia Sokcho 7 Days Club</p>
-        <h2 class="hero-title">High-end<br>오너십의 품격</h2>
-      </div>
-    </section>
-
-    <!-- WHY -->
-    <section class="sec sec-why">
-      <div class="inner">
-        <p class="sec-eyebrow">왜 자산 보다는 실거</p>
-        <h3 class="sec-title">만족스럽지 못한가?</h3>
-        <ul class="why-list">
-          <li>
-            <span class="why-badge">WHY?</span>
-            <p>비싸기만 하고<br>실사용은 애매한 자산</p>
-          </li>
-          <li>
-            <span class="why-badge">WHY?</span>
-            <p>관리 부담이<br>끊이지 않는 자산</p>
-          </li>
-          <li>
-            <span class="why-badge">WHY?</span>
-            <p>공간의 가치가<br>드러나지 않는 자산</p>
-          </li>
-        </ul>
+      <div class="hero-overlay"></div>
+      <div class="hero-content">
+        <p data-editable="text" data-uid="home-ct-txt-1" class="hero-brand">Cassia Sokcho 7 Days Club</p>
+        <h2 data-editable="text" data-uid="home-ct-txt-2" class="hero-title">High-end ownership</h2>
       </div>
     </section>
 
-    <!-- NEW ALTERNATIVE -->
-    <section class="sec sec-alt">
-      <div class="inner">
-        <p class="sec-eyebrow">진짜 만족이 소유로 실현</p>
-        <h3 class="sec-title"><strong>새로운 대안이</strong><br>필요합니다</h3>
-        <div class="alt-visual">
-          <img src="images/main/main-paradiam.jpg" alt="">
+    <!-- INTRO: 반인그룹 호텔을 소유하다 -->
+    <section class="sec sec-intro">
+      <div class="intro-layout">
+        <div class="intro-box">
+          1/52
+          <br/>
+          지분으로
         </div>
-        <p class="alt-desc">
-          일상의 쉼과 프리미엄 라이프스타일을 동시에 누리는<br>
-          오직 7%에게만 허락된 새로운 오너십의 기준
-        </p>
+        <div class="intro-text">
+          <h2 data-editable="text" data-uid="home-ct-txt-4" class="sec-title">반인그룹 호텔을<br>소유하다</h2>
+          <div class="intro-text-body">
+            <p data-editable="text" data-uid="home-ct-txt-5" class="intro-sub">
+              평균분양가10억원대의하이엔드자산을 1/52 지분분할을통해
+              <br>
+              가장효율적으로소유하십시오. '이용'하지말고'소유'하세요.
+            </p>
+            <p data-editable="text" data-uid="home-ct-txt-6" class="intro-sub2">
+              '이용'하지말고'소유'하세요
+            </p>
+          </div>
+        </div>
       </div>
     </section>
 
-    <!-- BENEFIT TABLE -->
+    <!-- MERIT: 6가지 핵심 혜택 -->
+    <section class="sec sec-merit">
+      <!-- 슬라이더 영역 -->
+      <div class="merit-slider-wrap">
+        <div class="merit-slider-top">
+          <div class="merit-counter">
+            <span class="merit-current">01</span>
+            <span class="merit-bar"><span class="merit-progress"></span></span>
+            <span class="merit-total">03</span>
+          </div>
+        </div>
+        <div class="swiper merit-swiper" id="meritSwiper">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <img data-editable="image" data-uid="home-ct-img-3" src="images/main/slider-img-1.jpg" alt="카시아 속초">
+            </div>
+            <div class="swiper-slide">
+              <img data-editable="image" data-uid="home-ct-img-4" src="images/main/slider-img-2.jpg" alt="카시아 속초">
+            </div>
+            <div class="swiper-slide">
+              <img data-editable="image" data-uid="home-ct-img-5" src="images/main/main-global-portfolio-1.jpg" alt="카시아 속초">
+            </div>
+          </div>
+          <!-- 모바일 페이지네이션 -->
+          <div class="swiper-pagination merit-pagination"></div>
+        </div>
+        <!-- PC 화살표 -->
+        <button type="button" class="btn-merit-prev" aria-label="이전">
+          <img data-object="FIXATION" src="images/common/arr-prev-w.svg" alt="">
+        </button>
+        <button type="button" class="btn-merit-next" aria-label="다음">
+          <img data-object="FIXATION" src="images/common/arr-next-w.svg" alt="">
+        </button>
+      </div>
+
+      <!-- 메리트 박스 -->
+      <div class="merit-grid">
+        <!-- 1열: Hotel Owner -->
+        <div class="merit-pair">
+          <div class="merit-item merit-item--head">
+            <p class="merit-kicker" data-editable="text" data-uid="home-ct-txt-9">Hotel</p>
+            <p class="merit-headline" data-editable="text" data-uid="home-ct-txt-10">Owner</p>
+          </div>
+          <div class="merit-item merit-item--body">
+            <p class="merit-body-title" data-editable="text" data-uid="home-ct-txt-11">내 이름으로 등기되는 자산</p>
+            <p class="merit-body-sub" data-editable="text" data-uid="home-ct-txt-12">실질적 부동산 소유</p>
+          </div>
+        </div>
+        <!-- 2열: withbanyan -->
+        <div class="merit-pair">
+          <div class="merit-item merit-item--head">
+            <img data-editable="image" data-uid="home-ct-img-3" src="images/main/slider-txt.svg" alt="withbanyan" class="merit-banyan-img">
+          </div>
+          <div class="merit-item merit-item--body">
+            <p class="merit-body-title" data-editable="text" data-uid="home-ct-txt-14">글로벌 럭셔리 브랜드 오너십</p>
+            <p class="merit-body-sub" data-editable="text" data-uid="home-ct-txt-15">반얀그룹의 위탁 운영 관리</p>
+          </div>
+        </div>
+        <!-- 3열: 30days -->
+        <div class="merit-pair">
+          <div class="merit-item merit-item--head">
+            <p class="merit-days" data-editable="text" data-uid="home-ct-txt-16"><span class="merit-days-num">30</span><span class="merit-days-unit">days</span></p>
+          </div>
+          <div class="merit-item merit-item--body">
+            <p class="merit-body-title" data-editable="text" data-uid="home-ct-txt-17">연간 30일 프리미엄 사용</p>
+            <p class="merit-body-sub" data-editable="text" data-uid="home-ct-txt-18">합리적인 공유 모델</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- EXCLUSIVE 7% -->
+    <section class="sec sec-exclusive">
+      <div class="exclusive-layout">
+        <div class="exclusive-text">
+          <p data-editable="text" data-uid="home-ct-txt-16" class="exclusive-lead">원하는 날, 원하는 객실을</p>
+          <h2 data-editable="text" data-uid="home-ct-txt-17" class="sec-title">오직 7%에게만</h2>
+          <p data-editable="text" data-uid="home-ct-txt-18" class="exclusive-body">
+            전체 674 실 중 단 7% 만 분양하여 오너분들이 원하는 날짜와<br>
+            객실을 안정적으로 예약할 수 있는 환경을 제공합니다.
+          </p>
+          <p data-editable="text" data-uid="home-ct-txt-19" class="exclusive-quote">
+            "예약이 '되는'멤버십, 그것이 진정한 특권입니다."
+          </p>
+        </div>
+        <div class="swiper exclusive-swiper" id="exclusiveSwiper">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <img data-editable="image" data-uid="home-ct-img-14" src="images/sub/exclusive-img-1.png" alt="카시아 속초 외관">
+            </div>
+            <div class="swiper-slide">
+              <img data-editable="image" data-uid="home-ct-img-15" src="images/main/slider-img-3.jpg" alt="카시아 속초 내부">
+            </div>
+            <div class="swiper-slide">
+              <img data-editable="image" data-uid="home-ct-img-16" src="images/sub/exclusive-img-3.png" alt="카시아 속초 시설">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- BENEFIT TABLE: 7 Days Club 혜택 안내 -->
     <section class="sec sec-benefit">
+      <div class="benefit-bg">
+        <img data-object="FIXATION" src="images/sub/benefit-bg.jpg" alt="7 Days Club 혜택 섹션 배경">
+      </div>
+      <div class="benefit-overlay"></div>
       <div class="inner">
-        <h3 class="sec-title">7 Days Club 혜택 안내</h3>
+        <h2 data-editable="text" data-uid="home-ct-txt-20" class="sec-title">7 Days Club <br/> 혜택 안내</h2>
+        <p data-editable="text" data-uid="home-ct-txt-21" class="benefit-intro">
+          평일은 물론 주말과 성수기까지. 7DaysClub의 휴식은 깊이가 다릅니다.<br>
+          총 30일을 제공하는 프로그램으로 여유있는 라이프스타일을 즐겨보세요.
+        </p>
         <div class="benefit-table-wrap">
           <table class="benefit-table">
             <thead>
               <tr>
-                <th>구분</th>
-                <th>기본혜택</th>
-                <th>프리미엄 혜택</th>
-                <th>비고</th>
+                <th data-editable="false">구분</th>
+                <th data-editable="false">주중(일-목)</th>
+                <th data-editable="false">성수기, 주말, 공휴일</th>
+                <th data-editable="false">합계</th>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <td>숙박</td>
-                <td>연 7박 제공</td>
-                <td>연 14박 제공</td>
-                <td>전 지점</td>
+                <td class="cell-category" data-editable="text" data-uid="home-ct-txt-22">기본 혜택(7일)</td>
+                <td data-label="주중(일-목)" data-editable="text" data-uid="home-ct-txt-23">주중 4일</td>
+                <td data-label="성수기, 주말, 공휴일" data-editable="text" data-uid="home-ct-txt-24">성수기&amp;주말(공휴일) 3일</td>
+                <td data-label="합계" data-editable="text" data-uid="home-ct-txt-25">7일</td>
               </tr>
-              <tr>
-                <td>F&amp;B</td>
-                <td>10% 할인</td>
-                <td>20% 할인</td>
-                <td>제휴 식당</td>
+              <tr class="row-highlight">
+                <td class="cell-category" data-editable="text" data-uid="home-ct-txt-26"><span class="badge">추가 혜택(23일)</span></td>
+                <td data-label="주중(일-목)" data-editable="text" data-uid="home-ct-txt-27">주중 16일</td>
+                <td data-label="성수기, 주말, 공휴일" data-editable="text" data-uid="home-ct-txt-28">주말(공휴일) 7일</td>
+                <td data-label="합계" data-editable="text" data-uid="home-ct-txt-29">23일</td>
               </tr>
-              <tr>
-                <td>부가서비스</td>
-                <td>무료 주차</td>
-                <td>전용 라운지</td>
-                <td>상시 운영</td>
+              <tr class="row-total">
+                <td class="cell-category" data-editable="text" data-uid="home-ct-txt-30">총계</td>
+                <td data-label="주중(일-목)" data-editable="text" data-uid="home-ct-txt-31">주중 20일</td>
+                <td data-label="성수기, 주말, 공휴일" data-editable="text" data-uid="home-ct-txt-32">성수기&amp;주말(공휴일) 10일</td>
+                <td data-label="합계" data-editable="text" data-uid="home-ct-txt-33">30일</td>
               </tr>
             </tbody>
           </table>
         </div>
-        <a href="#consult" class="btn-primary">상담 신청하기</a>
+        <a href="#consult" data-editable="text" data-uid="home-ct-btn-1" class="btn-primary">상담 신청하기</a>
       </div>
     </section>
 
-    <!-- BANYAN -->
-    <section class="sec sec-banyan">
+    <!-- EFFICIENCY: 압도적 비용 효율성 -->
+    <section class="sec sec-efficiency">
       <div class="inner">
-        <p class="sec-eyebrow">Why Cassia</p>
-        <h3 class="sec-title"><strong>반얀그룹 호텔</strong>을 소유하다</h3>
-        <ul class="banyan-list">
-          <li>
-            <strong>60개국 이상</strong>
-            <p>글로벌 운영 네트워크</p>
-          </li>
-          <li>
-            <strong>글로벌 브랜드의 위상</strong>
-            <p>세계적 호스피탈리티</p>
-          </li>
-          <li>
-            <strong>30년의 노하우</strong>
-            <p>프리미엄 리조트 운영</p>
-          </li>
-        </ul>
-      </div>
-      <div class="banyan-visual">
-        <img src="images/main/main-global-portfolio-1.jpg" alt="">
-      </div>
-    </section>
-
-    <!-- LIMITED 7% -->
-    <section class="sec sec-limited">
-      <div class="inner">
-        <p class="sec-eyebrow">Things</p>
-        <h3 class="sec-title">오직 7%로제한</h3>
-        <p class="limited-desc">
-          Who. Why. What. 그 모든 질문에 대한 답<br>
-          <em>프리미엄 오너만을 위한 선택</em>
-        </p>
-        <div class="limited-grid">
-          <div><img src="images/sub/pre-img-1.jpg" alt=""></div>
-          <div><img src="images/sub/pre-img-2.jpg" alt=""></div>
-          <div><img src="images/sub/pre-img-3.jpg" alt=""></div>
-        </div>
-      </div>
-    </section>
-
-    <!-- CHART -->
-    <section class="sec sec-chart">
-      <div class="inner">
-        <p class="sec-eyebrow">수익 구조까지</p>
-        <h3 class="sec-title">청수 연회비 면제</h3>
-        <div class="chart">
-          <ul class="chart-bars">
-            <li><span class="bar bar-a" style="--h:50%"></span><span class="bar bar-b" style="--h:30%"></span><em>1년차</em></li>
-            <li><span class="bar bar-a" style="--h:60%"></span><span class="bar bar-b" style="--h:40%"></span><em>2년차</em></li>
-            <li><span class="bar bar-a" style="--h:75%"></span><span class="bar bar-b" style="--h:55%"></span><em>3년차</em></li>
-            <li><span class="bar bar-a" style="--h:90%"></span><span class="bar bar-b" style="--h:70%"></span><em>4년차</em></li>
-            <li><span class="bar bar-a" style="--h:100%"></span><span class="bar bar-b" style="--h:85%"></span><em>5년차</em></li>
-          </ul>
-          <ul class="chart-legend">
-            <li><span class="dot dot-a"></span>카시아 오너</li>
-            <li><span class="dot dot-b"></span>일반 오너</li>
-          </ul>
-        </div>
-        <div class="chart-sale">
-          <p>업계 최저가 수익 부담</p>
-          <strong>40% 이상 할인</strong>
-          <div class="sale-bar"><span style="width:70%"></span></div>
-          <p class="sale-caption">Pricing 구조 절감</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- SUITE -->
-    <section class="sec sec-suite">
-      <div class="inner">
-        <p class="sec-eyebrow">공간 그 이상의 경험</p>
-        <h3 class="sec-title">전용 24평<br>스위트</h3>
-      </div>
-      <div class="suite-visual">
-        <img src="images/sub/roomtype-img-1.jpg" alt="">
-      </div>
-    </section>
-
-    <!-- DELUXE -->
-    <section class="sec sec-deluxe">
-      <div class="inner">
-        <p class="sec-eyebrow">Deluxe</p>
-        <h3 class="sec-title">DELUXE</h3>
-        <ul class="tab-nav">
-          <li class="is-active"><button type="button">Type A</button></li>
-          <li><button type="button">Type B</button></li>
-          <li><button type="button">Type C</button></li>
-        </ul>
-        <div class="tab-panel">
-          <div class="deluxe-grid">
-            <div><img src="images/sub/dlx-img-1.jpg" alt=""></div>
-            <div><img src="images/sub/dlx-img-2.jpg" alt=""></div>
-            <div><img src="images/sub/dlx-img-3.jpg" alt=""></div>
-            <div><img src="images/sub/dlx-img-4.jpg" alt=""></div>
+        <div class="efficiency-header">
+          <div class="efficiency-title-wrap">
+            <p data-editable="text" data-uid="home-ct-txt-69" class="sec-eyebrow">평생 연회비 면제까지</p>
+            <h2 data-editable="text" data-uid="home-ct-txt-70" class="sec-title">압도적 비용 효율성</h2>
           </div>
-          <a href="#" class="btn-line">상세 보기</a>
+          <p data-editable="text" data-uid="home-ct-txt-71" class="efficiency-desc">
+            숙박 앱 대비 최대 40% 이상 저렴한 가격으로 5성급 호텔을 영구히 이용 가능합니다. 창립 회원은 증여, 명의개서 전까지 연회비도 면제해드립니다.
+          </p>
+        </div>
+        <div class="efficiency-grid">
+          <div class="efficiency-card efficiency-card--accent">
+            <div class="efficiency-icon">
+<span class="efficiency-star" aria-hidden="true">*</span>
+              <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <rect x="10" y="26" width="44" height="30" stroke="currentColor" stroke-width="1.2"/>
+                <rect x="6" y="18" width="52" height="10" stroke="currentColor" stroke-width="1.2"/>
+                <line x1="32" y1="18" x2="32" y2="56" stroke="currentColor" stroke-width="1.2"/>
+                <path d="M32 18C28 12 22 10 20 12C18 14 20 18 24 18C27 18 32 18 32 18Z" stroke="currentColor" stroke-width="1.2" stroke-linejoin="round"/>
+                <path d="M32 18C36 12 42 10 44 12C46 14 44 18 40 18C37 18 32 18 32 18Z" stroke="currentColor" stroke-width="1.2" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <div class="efficiency-card-text">
+              <p data-editable="text" data-uid="home-ct-txt-72" class="efficiency-card-title">평생 연회비 면제(한정)</p>
+              <p data-editable="text" data-uid="home-ct-txt-73" class="efficiency-card-sub">창립 회원만(6월30일까지)</p>
+            </div>
+          </div>
+          <span class="efficiency-card-divider" aria-hidden="true"></span>
+          <div class="efficiency-card">
+            <div class="efficiency-icon">
+<svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <path d="M10 34L30 14C31 13 32.5 12.5 34 12.5H50C51.1 12.5 52 13.4 52 13.6V29.6C52 31.1 51.5 32.6 50.5 33.6L30 54L10 34Z" stroke="currentColor" stroke-width="1.2" stroke-linejoin="round"/>
+                <circle cx="43" cy="21" r="3" stroke="currentColor" stroke-width="1.2"/>
+                <path d="M25 34C25 36 26 38 28 38C30 38 31 36 31 34C31 32 32 30 34 30C36 30 37 32 37 34" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <div class="efficiency-card-text">
+              <p data-editable="text" data-uid="home-ct-txt-74" class="efficiency-card-title">최대 40% 이상 할인</p>
+              <p data-editable="text" data-uid="home-ct-txt-75" class="efficiency-card-sub">숙박 앱 대비 합리적인 가격</p>
+            </div>
+          </div>
+          <span class="efficiency-card-divider" aria-hidden="true"></span>
+          <div class="efficiency-card">
+            <div class="efficiency-icon">
+<svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <path d="M7 18H57V28C54.8 28 53 29.8 53 32C53 34.2 54.8 36 57 36V46H7V36C9.2 36 11 34.2 11 32C11 29.8 9.2 28 7 28V18Z" stroke="currentColor" stroke-width="1.2" stroke-linejoin="round"/>
+                <path d="M32 25L33.7 29L38 29.5L35 32.5L35.8 36.8L32 34.5L28.2 36.8L29 32.5L26 29.5L30.3 29L32 25Z" stroke="currentColor" stroke-width="1.2" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <div class="efficiency-card-text">
+              <p data-editable="text" data-uid="home-ct-txt-76" class="efficiency-card-title">무료 숙박권 3매 증정</p>
+              <p data-editable="text" data-uid="home-ct-txt-77" class="efficiency-card-sub">지인, 비즈니스 등 활용 가능</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="efficiency-watermark-wrap">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div class="efficiency-watermark" aria-hidden="true">
+          <img data-object="FIXATION" src="images/sub/CASSIA SOKCHO.png" alt="">
         </div>
       </div>
     </section>
 
-    <!-- INFRA -->
-    <section class="sec sec-infra">
+    <!-- ROOM: 객실 안내 -->
+    <section class="sec sec-room">
       <div class="inner">
-        <p class="sec-eyebrow">Infra</p>
-        <h3 class="sec-title">완벽한 인프라</h3>
-        <ul class="infra-list">
-          <li>
-            <img src="images/sub/fac-img-1-1.jpg" alt="">
-            <div class="infra-info">
-              <strong>2<small>분</small></strong>
-              <p>속초해수욕장</p>
+        <div class="room-header">
+          <div class="room-header-text">
+            <p data-editable="text" data-uid="home-ct-txt-34" class="sec-eyebrow">Room</p>
+            <h2 data-editable="text" data-uid="home-ct-txt-35" class="sec-title">공간 그 이상의 경험</h2>
+          </div>
+          <div class="room-nav">
+            <button type="button" class="btn-slide-prev" aria-label="이전">
+              <img data-object="FIXATION" src="images/common/btn-prev-arr.svg" alt="">
+            </button>
+            <div class="slide-counter">
+              <span class="slide-current">01</span>
+              <span class="slide-bar"><span class="slide-progress"></span></span>
+              <span class="slide-total">03</span>
             </div>
-          </li>
-          <li>
-            <img src="images/sub/fac-img-1-2.jpg" alt="">
-            <div class="infra-info">
-              <strong>3<small>분</small></strong>
-              <p>설악산국립공원</p>
-            </div>
-          </li>
-        </ul>
+            <button type="button" class="btn-slide-next" aria-label="다음">
+              <img data-object="FIXATION" src="images/common/btn-next-arr.svg" alt="">
+            </button>
+          </div>
+        </div>
       </div>
-    </section>
-
-    <!-- DINING -->
-    <section class="sec sec-dining">
-      <div class="inner">
-        <p class="sec-eyebrow">Things (3개)</p>
-        <h3 class="sec-title">속초 입주권 살기 적격해</h3>
-        <div class="dining-visual">
-          <img src="images/sub/dining-img-1.jpg" alt="">
+      <div class="room-slider" id="roomSlider">
+        <div class="room-slides">
+          <figure class="room-slide">
+            <img data-editable="image" data-uid="home-ct-img-15" src="images/sub/roomtype-img-1.jpg" alt="스위트 A타입">
+            <figcaption data-editable="text" data-uid="home-ct-txt-36">Suite Type A</figcaption>
+          </figure>
+          <figure class="room-slide">
+            <img data-editable="image" data-uid="home-ct-img-16" src="images/sub/roomtype-img-2.jpg" alt="스위트 B타입">
+            <figcaption data-editable="text" data-uid="home-ct-txt-37">Suite Type B</figcaption>
+          </figure>
+          <figure class="room-slide">
+            <img data-editable="image" data-uid="home-ct-img-17" src="images/sub/roomtype-img-3.jpg" alt="스위트 C타입">
+            <figcaption data-editable="text" data-uid="home-ct-txt-38">Suite Type C</figcaption>
+          </figure>
         </div>
       </div>
     </section>
 
-    <!-- COMPARE -->
+    <!-- FACILITY: 다이닝 & 시설 -->
+    <section class="sec sec-facility">
+      <div class="facility-slider" id="facilitySlider">
+        <div class="facility-slides">
+          <div class="facility-slide">
+            <img data-editable="image" data-uid="home-ct-img-18" src="images/sub/dining-img-1.jpg" alt="레스토랑">
+            <div class="facility-info">
+              <p data-editable="text" data-uid="home-ct-txt-39" class="facility-label">Dining</p>
+              <p data-editable="text" data-uid="home-ct-txt-40" class="facility-desc">속초의 맛을 담은 파인 다이닝</p>
+            </div>
+          </div>
+          <div class="facility-slide">
+            <img data-editable="image" data-uid="home-ct-img-19" src="images/sub/dining-img-2.jpg" alt="바 라운지">
+            <div class="facility-info">
+              <p data-editable="text" data-uid="home-ct-txt-41" class="facility-label">Bar & Lounge</p>
+              <p data-editable="text" data-uid="home-ct-txt-42" class="facility-desc">프리미엄 바 라운지</p>
+            </div>
+          </div>
+          <div class="facility-slide">
+            <img data-editable="image" data-uid="home-ct-img-20" src="images/sub/fac-img-1-1.jpg" alt="해수욕장">
+            <div class="facility-info">
+              <p data-editable="text" data-uid="home-ct-txt-43" class="facility-label">Beach</p>
+              <p data-editable="text" data-uid="home-ct-txt-44" class="facility-desc">도보 2분 속초해수욕장</p>
+            </div>
+          </div>
+          <div class="facility-slide">
+            <img data-editable="image" data-uid="home-ct-img-21" src="images/sub/fac-img-1-2.jpg" alt="국립공원">
+            <div class="facility-info">
+              <p data-editable="text" data-uid="home-ct-txt-45" class="facility-label">National Park</p>
+              <p data-editable="text" data-uid="home-ct-txt-46" class="facility-desc">도보 3분 설악산국립공원</p>
+            </div>
+          </div>
+        </div>
+        <div class="facility-nav">
+          <button type="button" class="btn-fac-prev" aria-label="이전">
+            <img data-object="FIXATION" src="images/common/arr-prev-w.svg" alt="">
+          </button>
+          <button type="button" class="btn-fac-next" aria-label="다음">
+            <img data-object="FIXATION" src="images/common/arr-next-w.svg" alt="">
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- MAP: 위치 안내 -->
+    <section class="sec sec-map">
+      <div class="inner">
+        <p data-editable="text" data-uid="home-ct-txt-47" class="sec-eyebrow">Location</p>
+        <h2 data-editable="text" data-uid="home-ct-txt-48" class="sec-title">완벽한 입지</h2>
+        <div class="map-images">
+          <picture>
+            <source media="(min-width: 768px)" srcset="images/sub/map-pc-1.jpg">
+            <img data-editable="image" data-uid="home-ct-img-22" src="images/sub/map-m-1.jpg" alt="카시아 속초 위치 지도">
+          </picture>
+        </div>
+      </div>
+    </section>
+
+    <!-- COMPARE: 비교 분석 -->
     <section class="sec sec-compare">
       <div class="inner">
-        <p class="sec-eyebrow">Choice</p>
-        <h3 class="sec-title">확실한 기회를 선택하세요</h3>
+        <p data-editable="text" data-uid="home-ct-txt-49" class="sec-eyebrow">Choice</p>
+        <h2 data-editable="text" data-uid="home-ct-txt-50" class="sec-title">확실한 기회를 선택하세요</h2>
         <div class="compare-table-wrap">
           <table class="compare-table">
             <thead>
               <tr>
-                <th>구분</th>
-                <th>7 Days Club</th>
-                <th>일반 멤버십</th>
+                <th data-editable="false">구분</th>
+                <th data-editable="false" class="col-highlight">7 Days Club</th>
+                <th data-editable="false">일반 멤버십</th>
               </tr>
             </thead>
             <tbody>
-              <tr><td>연회비</td><td>면제</td><td>연 300만원</td></tr>
-              <tr><td>숙박 제공</td><td>최대 14박</td><td>최대 3박</td></tr>
-              <tr><td>혜택 범위</td><td>전 지점</td><td>일부 지점</td></tr>
-              <tr><td>전용 서비스</td><td>제공</td><td>미제공</td></tr>
+              <tr>
+                <td data-editable="text" data-uid="home-ct-txt-51">연회비</td>
+                <td data-editable="text" data-uid="home-ct-txt-52" class="col-highlight">면제</td>
+                <td data-editable="text" data-uid="home-ct-txt-53">연 300만원</td>
+              </tr>
+              <tr>
+                <td data-editable="text" data-uid="home-ct-txt-54">숙박 제공</td>
+                <td data-editable="text" data-uid="home-ct-txt-55" class="col-highlight">최대 30박</td>
+                <td data-editable="text" data-uid="home-ct-txt-56">최대 3박</td>
+              </tr>
+              <tr>
+                <td data-editable="text" data-uid="home-ct-txt-57">혜택 범위</td>
+                <td data-editable="text" data-uid="home-ct-txt-58" class="col-highlight">전 지점</td>
+                <td data-editable="text" data-uid="home-ct-txt-59">일부 지점</td>
+              </tr>
+              <tr>
+                <td data-editable="text" data-uid="home-ct-txt-60">전용 서비스</td>
+                <td data-editable="text" data-uid="home-ct-txt-61" class="col-highlight">제공</td>
+                <td data-editable="text" data-uid="home-ct-txt-62">미제공</td>
+              </tr>
+              <tr>
+                <td data-editable="text" data-uid="home-ct-txt-63">무료 숙박권 증정</td>
+                <td data-editable="text" data-uid="home-ct-txt-64" class="col-highlight">3매 제공</td>
+                <td data-editable="text" data-uid="home-ct-txt-65">미제공</td>
+              </tr>
             </tbody>
           </table>
         </div>
       </div>
     </section>
 
-    <!-- CONSULT -->
+    <!-- CONSULT: 상담 신청 -->
     <section class="sec sec-consult" id="consult">
+      <div class="consult-bg">
+        <img data-object="FIXATION" src="images/common/consult-tit-bg.jpg" alt="상담 신청 섹션 배경">
+      </div>
+      <div class="consult-overlay"></div>
       <div class="inner">
-        <p class="sec-eyebrow">Contact</p>
-        <h3 class="sec-title">오너십 혜택 안내</h3>
-        <form class="consult-form" onsubmit="return false">
-          <label>
-            <span>이름</span>
-            <input type="text" placeholder="이름을 입력해주세요">
-          </label>
-          <label>
-            <span>연락처</span>
-            <input type="tel" placeholder="연락처를 입력해주세요">
-          </label>
-          <label class="agree">
-            <input type="checkbox">
-            <span>개인정보 수집 및 이용에 동의합니다.</span>
-          </label>
-          <button type="submit" class="btn-primary">상담 신청하기</button>
-        </form>
+        <div class="consult-layout">
+          <div class="consult-text">
+            <p data-editable="text" data-uid="home-ct-txt-66" class="sec-eyebrow">Contact</p>
+            <h2 data-editable="text" data-uid="home-ct-txt-67" class="sec-title">오너십 혜택 안내<br>자료를 받아보세요</h2>
+            <p data-editable="text" data-uid="home-ct-txt-68" class="consult-desc">
+              카시아 속초 7 Days Club의 상세 안내 자료를<br>
+              신청해주시면 빠른 시일 내 연락드리겠습니다.
+            </p>
+          </div>
+          <div class="consult-form-wrap">
+            <form id="consultForm" class="consult-form" novalidate>
+              <div class="form-row">
+                <label for="consultName">성함<span class="required">*</span></label>
+                <input type="text" id="consultName" name="name" autocomplete="name" placeholder="성함을 입력해주세요">
+              </div>
+              <div class="form-row">
+                <label for="consultPhone">전화번호<span class="required">*</span></label>
+                <input type="tel" id="consultPhone" name="phone" autocomplete="tel" placeholder="전화번호를 입력해주세요">
+              </div>
+
+              <!-- 약관 제목 + 자세히보기 토글 -->
+              <div class="terms-title-wrap">
+                <div class="terms-title-list">
+                  <p>개인정보 수집·이용 동의 [필수]</p>
+                  <p>개인정보 제3자 제공 동의 [필수]</p>
+                  <p>마케팅 정보 수신 동의 [선택]</p>
+                </div>
+                <button type="button" class="terms-toggle" aria-expanded="false" aria-controls="termsCollapse">자세히보기</button>
+              </div>
+
+              <!-- 약관 상세 (숨김 토글) -->
+              <div class="terms-collapse" id="termsCollapse" hidden>
+                <div class="terms-box">
+                  <h4>개인정보 수집·이용 동의 [필수]</h4>
+                  <ul>
+                    <li>수집 목적 : 회원 가입 및 본인 확인, 분양 매물 정보 제공, 서비스 이용 계약 체결 및 이행, 고객 상담 및 민원 처리, 공지사항 전달</li>
+                    <li>수집 항목 : [필수] 성명, 휴대전화번호, 이메일, 소속 회사명, 직책, 사업자등록번호</li>
+                    <li>보유·이용 기간 : 회원 탈퇴 시까지 (단, 관계 법령에 따른 보존 기간은 별도 적용)</li>
+                  </ul>
+                  <p class="terms-note">※ 위 동의를 거부하실 수 있으나, 거부 시 서비스 이용이 제한됩니다.</p>
+                </div>
+                <div class="checkbox-group">
+                  <input type="checkbox" id="agreeCollect" name="CC19001" class="agree-item">
+                  <label for="agreeCollect">개인정보 수집·이용에 동의합니다 [필수]</label>
+                </div>
+
+                <div class="terms-box">
+                  <h4>개인정보 제3자 제공 동의 [필수]</h4>
+                  <ul>
+                    <li>제공받는 자 : 분양 시행사, 분양 대행사, 제휴 부동산 중개법인</li>
+                    <li>제공 목적 : 분양 매물 상담 연결, 계약 진행 지원</li>
+                    <li>제공 항목 : 성명, 휴대전화번호, 이메일, 관심 매물 정보</li>
+                    <li>보유·이용 기간 : 제공 목적 달성 후 즉시 파기 (단, 계약 체결 시 관계 법령에 따름)</li>
+                  </ul>
+                  <p class="terms-note">※ 위 동의를 거부하실 수 있으나, 거부 시 매물 상담 연결 서비스 이용이 제한됩니다.</p>
+                </div>
+                <div class="checkbox-group">
+                  <input type="checkbox" id="agreeThirdParty" name="CC19002" class="agree-item">
+                  <label for="agreeThirdParty">개인정보 제3자 제공에 동의합니다 [필수]</label>
+                </div>
+
+                <div class="terms-box">
+                  <h4>마케팅 정보 수신 동의 [선택]</h4>
+                  <ul>
+                    <li>수신 채널 : SMS/MMS, 이메일, 앱 푸시 알림</li>
+                    <li>발송 내용 : 신규 분양 매물 안내, 플랫폼 업데이트 정보, 이벤트 및 혜택 안내</li>
+                    <li>수신 거부 : 수신 거부 의사는 언제든지 철회 가능 (앱 내 설정 또는 고객센터 요청)</li>
+                  </ul>
+                  <p class="terms-note">※ 위 동의를 거부하셔도 기본 서비스 이용에는 지장이 없습니다.</p>
+                </div>
+                <div class="checkbox-group">
+                  <input type="checkbox" id="agreeMarketing" class="agree-item">
+                  <label for="agreeMarketing">마케팅 정보 수신에 동의합니다 [선택]</label>
+                </div>
+
+                <div class="terms-box">
+                  <h4>■ 개인정보 처리 관련 문의</h4>
+                  <ul>
+                    <li>개인정보 보호책임자 : 이만호</li>
+                    <li>운영사 : (주)프롭팔로우 cpa@cpainc.co.kr</li>
+                  </ul>
+                </div>
+              </div>
+
+              <!-- 전체 동의 -->
+              <div class="checkbox-group agree-all">
+                <input type="checkbox" id="agreeAll">
+                <label for="agreeAll">전체 동의합니다.</label>
+              </div>
+
+              <button type="submit" data-editable="text" data-uid="home-ct-btn-2" class="btn-primary">자료 다운로드</button>
+            </form>
+          </div>
+        </div>
       </div>
     </section>
 
   </main>
 
-  <!-- FOOTER -->
-  <footer id="footer">
+  <!-- FOOTER (편집 가능 영역) -->
+  <footer id="layout-footer">
     <div class="inner">
-      <p class="footer-logo">
-        <img src="images/common/logo_white.svg" alt="CASIA">
+      <div class="footer-top">
+        <p class="footer-logo">
+          <img data-object="FIXATION" src="images/common/logo_white.svg" alt="CASSIA SOKCHO">
+        </p>
+        <div class="footer-info">
+          <dl>
+            <dt data-editable="text" data-uid="home-ft-txt-1">위탁자</dt>
+            <dd data-editable="text" data-uid="home-ft-txt-2">대포항937PFV</dd>
+          </dl>
+          <address data-editable="text" data-uid="home-ft-txt-3">
+            경기도 용인시 기흥구 흥덕2로 87번길 18<br>
+            비동 4층 캠퍼스광교센터 41호(영덕동, 이씨티빌딩)
+          </address>
+          <dl>
+            <dt data-editable="text" data-uid="home-ft-txt-4">대표이사</dt>
+            <dd data-editable="text" data-uid="home-ft-txt-5">이상술</dd>
+          </dl>
+          <dl>
+            <dt data-editable="text" data-uid="home-ft-txt-6">등록번호</dt>
+            <dd data-editable="text" data-uid="home-ft-txt-7">134511 0464799</dd>
+          </dl>
+          <dl>
+            <dt data-editable="text" data-uid="home-ft-txt-8">시공사</dt>
+            <dd data-editable="text" data-uid="home-ft-txt-9">한화건설</dd>
+          </dl>
+        </div>
+      </div>
+      <p data-editable="text" data-uid="home-ft-txt-10" class="footer-copy">
+        COPYRIGHT©2020 CASSIA SOKCHO ALL RIGHTS RESERVED
       </p>
-      <p class="footer-copy">
-        상호: 카시아 속초 &nbsp;|&nbsp; 대표: 홍길동 &nbsp;|&nbsp; 주소: 강원도 속초시 ○○로 ○○<br>
-        문의: 1600-0000 &nbsp;|&nbsp; 사업자번호: 000-00-00000
-      </p>
-      <p class="footer-copyright">© CASIA SOKCHO. All rights reserved.</p>
     </div>
   </footer>
 
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
   <script src="js/main.js"></script>
 </body>
 </html>
