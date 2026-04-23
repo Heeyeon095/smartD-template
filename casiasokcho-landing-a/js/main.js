@@ -107,9 +107,15 @@
       spaceBetween: 0,
       speed: 500,
       grabCursor: true,
+      allowTouchMove: false,
       navigation: {
         prevEl: '.btn-room-prev',
         nextEl: '.btn-room-next',
+      },
+      breakpoints: {
+        768: {
+          allowTouchMove: true,
+        }
       },
       on: {
         slideChange: function () {
