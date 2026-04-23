@@ -411,44 +411,154 @@
 
     <!-- FACILITY: 다이닝 & 시설 -->
     <section class="sec sec-facility">
-      <div class="facility-slider" id="facilitySlider">
-        <div class="facility-slides">
-          <div class="facility-slide">
-            <img data-editable="image" data-uid="home-ct-img-18" src="images/sub/dining-img-1.jpg" alt="레스토랑">
-            <div class="facility-info">
-              <p data-editable="text" data-uid="home-ct-txt-39" class="facility-label">Dining</p>
-              <p data-editable="text" data-uid="home-ct-txt-40" class="facility-desc">속초의 맛을 담은 파인 다이닝</p>
-            </div>
+      <div class="inner">
+        <div class="facility-header">
+          <div class="facility-title-wrap">
+            <p data-editable="text" data-uid="home-ct-txt-37" class="sec-eyebrow">5성급 호텔의</p>
+            <h2 data-editable="text" data-uid="home-ct-txt-38" class="sec-title">완벽한 인프라</h2>
+            <p data-editable="text" data-uid="home-ct-txt-39" class="facility-desc">
+              숙박은 물론 인피니티 풀이 선사하는 압도적인 경관과 5성급 호텔의 F&amp;B와 SPA까지 완벽한 수준의 인프라를 역대급 혜택으로 즐겨보세요.
+            </p>
           </div>
-          <div class="facility-slide">
-            <img data-editable="image" data-uid="home-ct-img-19" src="images/sub/dining-img-2.jpg" alt="바 라운지">
-            <div class="facility-info">
-              <p data-editable="text" data-uid="home-ct-txt-41" class="facility-label">Bar & Lounge</p>
-              <p data-editable="text" data-uid="home-ct-txt-42" class="facility-desc">프리미엄 바 라운지</p>
+          <div class="facility-tabs-wrap">
+            <div class="facility-tabs" role="tablist">
+              <button type="button" class="facility-tab is-active" role="tab" data-tab="dining">Dining (F&amp;B)</button>
+              <button type="button" class="facility-tab" role="tab" data-tab="facilities">Facilities</button>
             </div>
-          </div>
-          <div class="facility-slide">
-            <img data-editable="image" data-uid="home-ct-img-20" src="images/sub/fac-img-1-1.jpg" alt="해수욕장">
-            <div class="facility-info">
-              <p data-editable="text" data-uid="home-ct-txt-43" class="facility-label">Beach</p>
-              <p data-editable="text" data-uid="home-ct-txt-44" class="facility-desc">도보 2분 속초해수욕장</p>
-            </div>
-          </div>
-          <div class="facility-slide">
-            <img data-editable="image" data-uid="home-ct-img-21" src="images/sub/fac-img-1-2.jpg" alt="국립공원">
-            <div class="facility-info">
-              <p data-editable="text" data-uid="home-ct-txt-45" class="facility-label">National Park</p>
-              <p data-editable="text" data-uid="home-ct-txt-46" class="facility-desc">도보 3분 설악산국립공원</p>
-            </div>
+            <p data-editable="text" data-uid="home-ct-txt-40" class="facility-tab-desc is-active" data-tab-desc="dining">휴식의 순간마다, 다이닝 경험을 더 가볍게 누리세요.</p>
+            <p data-editable="text" data-uid="home-ct-txt-41" class="facility-tab-desc" data-tab-desc="facilities">역대급 혜택으로 완성되는 리커버리</p>
           </div>
         </div>
-        <div class="facility-nav">
-          <button type="button" class="btn-fac-prev" aria-label="이전">
-            <img data-object="FIXATION" src="images/common/arr-prev-w.svg" alt="">
-          </button>
-          <button type="button" class="btn-fac-next" aria-label="다음">
-            <img data-object="FIXATION" src="images/common/arr-next-w.svg" alt="">
-          </button>
+
+        <!-- Dining Panel -->
+        <div class="facility-panel is-active" data-panel="dining">
+          <div class="facility-hero">
+            <div class="swiper facility-hero-swiper">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <img data-editable="image" data-uid="home-ct-img-18" src="images/sub/dining-img-1.jpg" alt="Dining 이미지 1">
+                </div>
+                <div class="swiper-slide">
+                  <img data-editable="image" data-uid="home-ct-img-19" src="images/sub/tab-visual-img-1.jpg" alt="Dining 이미지 2">
+                </div>
+                <div class="swiper-slide">
+                  <img data-editable="image" data-uid="home-ct-img-20" src="images/sub/tab-visual-img-2.jpg" alt="Dining 이미지 3">
+                </div>
+              </div>
+              <div class="facility-card-nav">
+                <div class="facility-card-counter">
+                  <span class="current">01</span>
+                  <span class="bar"><span class="progress"></span></span>
+                  <span class="total">03</span>
+                </div>
+                <div class="facility-card-arrows">
+                  <button type="button" class="btn-fac-card-prev" aria-label="이전">
+                    <img data-object="FIXATION" src="images/common/arr-prev-w.svg" alt="">
+                  </button>
+                  <button type="button" class="btn-fac-card-next" aria-label="다음">
+                    <img data-object="FIXATION" src="images/common/arr-next-w.svg" alt="">
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="facility-card-info">
+              <h3 data-editable="text" data-uid="home-ct-txt-42" class="facility-card-name">
+                Dining (F&amp;B) <span class="facility-card-sub">비스타(C동4F), 오라이존(B동4F), 보스코(B·C동24F)</span>
+              </h3>
+              <p data-editable="text" data-uid="home-ct-txt-43" class="facility-card-discount">주중,주말 25% 할인</p>
+            </div>
+          </div>
+
+          <div class="facility-row">
+            <div class="facility-sub">
+              <div class="facility-static-img">
+                <img data-editable="image" data-uid="home-ct-img-23" src="images/sub/dining-img-2.jpg" alt="주류 메뉴">
+              </div>
+              <div class="facility-card-info">
+                <p data-editable="text" data-uid="home-ct-txt-47" class="facility-card-discount">주류 메뉴 25% 할인</p>
+              </div>
+            </div>
+            <div class="facility-sub facility-sub--staggered">
+              <div class="facility-static-img">
+                <img data-editable="image" data-uid="home-ct-img-21" src="images/sub/tab-visual-img-3.jpg" alt="시엘로">
+              </div>
+              <div class="facility-card-info">
+                <h3 data-editable="text" data-uid="home-ct-txt-44" class="facility-card-name">
+                  시엘로
+                  <br/>
+                  <span class="facility-card-sub">
+                  (루프탑 바)</span>
+                </h3>
+                <p data-editable="text" data-uid="home-ct-txt-45" class="facility-card-discount">주종, 주일 25% 할인</p>
+              </div>
+            </div>
+          </div>
+
+          <p class="facility-disclaimer">유의사항 | 프로모션 메뉴와 중복 할인 불가</p>
+        </div>
+
+        <!-- Facilities Panel -->
+        <div class="facility-panel" data-panel="facilities">
+          <div class="facility-hero">
+            <div class="facility-static-img">
+              <img data-editable="image" data-uid="home-ct-img-25" src="images/sub/fac-img-2.jpg" alt="Facilities">
+            </div>
+            <div class="facility-card-info">
+              <h3 data-editable="text" data-uid="home-ct-txt-48" class="facility-card-name">Facilities</h3>
+            </div>
+          </div>
+
+          <div class="facility-row">
+            <div class="facility-sub">
+              <div class="facility-static-img">
+                <img data-editable="image" data-uid="home-ct-img-27" src="images/sub/sub01-img-1.jpg" alt="SPA by ELBRIN">
+              </div>
+              <div class="facility-card-info">
+                <h3 data-editable="text" data-uid="home-ct-txt-49" class="facility-card-name">
+                  SPA by ELBRIN <span class="facility-card-sub">(B동9F)</span>
+                </h3>
+                <p data-editable="text" data-uid="home-ct-txt-50" class="facility-card-discount">주중, 주말 20% 할인</p>
+              </div>
+            </div>
+            <div class="facility-sub facility-sub--staggered">
+              <div class="swiper facility-sub-swiper">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide">
+                    <img data-editable="image" data-uid="home-ct-img-29" src="images/sub/fac-img-1-1.jpg" alt="인피니티풀 이미지 1">
+                  </div>
+                  <div class="swiper-slide">
+                    <img data-editable="image" data-uid="home-ct-img-30" src="images/sub/fac-img-1-2.jpg" alt="사우나 이미지 2">
+                  </div>
+                  <div class="swiper-slide">
+                    <img data-editable="image" data-uid="home-ct-img-31" src="images/sub/roomtype-img-1.jpg" alt="사우나 이미지 3">
+                  </div>
+                </div>
+                <div class="facility-card-nav">
+                  <div class="facility-card-counter">
+                    <span class="current">01</span>
+                    <span class="bar"><span class="progress"></span></span>
+                    <span class="total">03</span>
+                  </div>
+                  <div class="facility-card-arrows">
+                    <button type="button" class="btn-fac-card-prev" aria-label="이전">
+                      <img data-object="FIXATION" src="images/common/arr-prev-w.svg" alt="">
+                    </button>
+                    <button type="button" class="btn-fac-card-next" aria-label="다음">
+                      <img data-object="FIXATION" src="images/common/arr-next-w.svg" alt="">
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <div class="facility-card-info">
+                <h3 data-editable="text" data-uid="home-ct-txt-51" class="facility-card-name">
+                  인피니티풀&amp;사우나 <span class="facility-card-sub">(인피니티풀(B동4F), 사우나(B동5F))</span>
+                </h3>
+                <p data-editable="text" data-uid="home-ct-txt-52" class="facility-card-discount">멤버십 카드 1장 / 최대 2인 50% 할인</p>
+              </div>
+            </div>
+          </div>
+
+          <p class="facility-disclaimer">작동 조건 / 모든 혜택 예약은 객실 투숙 시 적용<br>안내 / 예약은 호텔 운영에 따라 변경될 수 있음</p>
         </div>
       </div>
     </section>
@@ -515,20 +625,19 @@
 
     <!-- CONSULT: 상담 신청 -->
     <section class="sec sec-consult" id="consult">
-      <div class="consult-bg">
-        <img data-object="FIXATION" src="images/common/consult-tit-bg.jpg" alt="상담 신청 섹션 배경">
-      </div>
-      <div class="consult-overlay"></div>
-      <div class="inner">
-        <div class="consult-layout">
+      <div class="consult-image">
           <div class="consult-text">
-            <p data-editable="text" data-uid="home-ct-txt-66" class="sec-eyebrow">Contact</p>
-            <h2 data-editable="text" data-uid="home-ct-txt-67" class="sec-title">오너십 혜택 안내<br>자료를 받아보세요</h2>
+            <p data-editable="text" data-uid="home-ct-txt-66" class="sec-eyebrow">INQUIRE</p>
+            <h2 data-editable="text" data-uid="home-ct-txt-67" class="sec-title">오너십 혜택 안내</h2>
             <p data-editable="text" data-uid="home-ct-txt-68" class="consult-desc">
-              카시아 속초 7 Days Club의 상세 안내 자료를<br>
-              신청해주시면 빠른 시일 내 연락드리겠습니다.
+              문의를 남겨주시면 관련 내용 확인 후 
+              <br>
+              빠른 시일 내에 연락 드리겠습니다.
             </p>
           </div>
+      </div>
+      <div class="inner">
+        <div class="consult-layout">
           <div class="consult-form-wrap">
             <form id="consultForm" class="consult-form" novalidate>
               <div class="consult-form-box">

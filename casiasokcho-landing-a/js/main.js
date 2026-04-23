@@ -107,15 +107,12 @@
       spaceBetween: 0,
       speed: 500,
       grabCursor: true,
-      allowTouchMove: false,
+      allowTouchMove: true,
+      observer: true,
+      observeParents: true,
       navigation: {
         prevEl: '.btn-room-prev',
         nextEl: '.btn-room-next',
-      },
-      breakpoints: {
-        768: {
-          allowTouchMove: true,
-        }
       },
       on: {
         slideChange: function () {
@@ -225,23 +222,70 @@
     syncLevel(0);
   }
 
-  /* ===== FACILITY SLIDER ===== */
-  const facilitySlider = document.getElementById('facilitySlider');
-  if (facilitySlider) {
-    const slides = facilitySlider.querySelector('.facility-slides');
-    const items = facilitySlider.querySelectorAll('.facility-slide');
-    const total = items.length;
-    let current = 0;
+  /* ===== FACILITY TABS + CARD SWIPERS ===== */
+  const facilitySection = document.querySelector('.sec-facility');
+  if (facilitySection && window.Swiper) {
+    const tabs = facilitySection.querySelectorAll('.facility-tab');
+    const panels = facilitySection.querySelectorAll('.facility-panel');
+    const tabDescs = facilitySection.querySelectorAll('.facility-tab-desc');
 
-    function goFacility(idx) {
-      current = (idx + total) % total;
-      slides.style.transform = 'translateX(-' + (current * 100) + '%)';
+    function activateTab(name) {
+      tabs.forEach(function (t) {
+        t.classList.toggle('is-active', t.dataset.tab === name);
+      });
+      panels.forEach(function (p) {
+        p.classList.toggle('is-active', p.dataset.panel === name);
+      });
+      tabDescs.forEach(function (d) {
+        d.classList.toggle('is-active', d.dataset.tabDesc === name);
+      });
+      Object.values(cardSwipers).forEach(function (sw) {
+        if (sw && sw.update) sw.update();
+      });
     }
 
-    const prevBtn = facilitySlider.querySelector('.btn-fac-prev');
-    const nextBtn = facilitySlider.querySelector('.btn-fac-next');
-    if (prevBtn) prevBtn.addEventListener('click', function () { goFacility(current - 1); });
-    if (nextBtn) nextBtn.addEventListener('click', function () { goFacility(current + 1); });
+    tabs.forEach(function (tab) {
+      tab.addEventListener('click', function () {
+        activateTab(tab.dataset.tab);
+      });
+    });
+
+    const cardSwipers = {};
+    const swiperTargets = facilitySection.querySelectorAll('.facility-hero-swiper, .facility-sub-swiper');
+    swiperTargets.forEach(function (el, idx) {
+      const totalSlides = el.querySelectorAll('.swiper-slide').length;
+      const currentEl = el.querySelector('.current');
+      const progressEl = el.querySelector('.progress');
+      const prevBtn = el.querySelector('.btn-fac-card-prev');
+      const nextBtn = el.querySelector('.btn-fac-card-next');
+
+      function updateCounter(i) {
+        if (currentEl) currentEl.textContent = String(i + 1).padStart(2, '0');
+        if (progressEl) progressEl.style.width = ((i + 1) / totalSlides * 100) + '%';
+      }
+
+      const sw = new Swiper(el, {
+        slidesPerView: 1,
+        spaceBetween: 0,
+        speed: 500,
+        grabCursor: true,
+        allowTouchMove: true,
+        observer: true,
+        observeParents: true,
+        navigation: {
+          prevEl: prevBtn,
+          nextEl: nextBtn,
+        },
+        on: {
+          slideChange: function () {
+            updateCounter(this.activeIndex);
+          }
+        }
+      });
+
+      updateCounter(0);
+      cardSwipers[idx] = sw;
+    });
   }
 
   /* ===== CONSULT FORM ===== */
