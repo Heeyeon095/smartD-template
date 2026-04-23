@@ -2073,7 +2073,6 @@ body {
 
   .facility-tabs {
     justify-content: flex-start;
-    gap: 40px;
     padding-bottom: 10px;
     margin-bottom: 20px;
   }
@@ -2083,7 +2082,7 @@ body {
   }
 
   .facility-tab.is-active::after {
-    bottom: -11px;
+    bottom: 40px;
   }
 
   .facility-card-arrows {
@@ -2092,6 +2091,7 @@ body {
 
   .facility-hero {
     margin-bottom: 50px;
+    width: calc(100vw - 20px);
   }
 
   .facility-row {
@@ -2105,7 +2105,7 @@ body {
   }
 
   .facility-sub:last-child {
-    margin-left: 25px;
+    margin-left: 50px;
   }
 
   .facility-sub:first-child .facility-static-img {
@@ -2113,13 +2113,16 @@ body {
   }
 
   .facility-sub:last-child .facility-static-img {
-    width: 95%;
+    width: 100%;
   }
 
   .facility-sub:last-child .facility-sub-swiper {
     width: 100%;
     height: 100%;
+    max-height: 240px;
     margin: 0px;
+    overflow: hidden;
+    margin-bottom: 20px;
   }
 
   .facility-sub--staggered {
@@ -2141,7 +2144,7 @@ body {
   .facility-card-nav {
     left: 14px;
     right: 14px;
-    bottom: 30px;
+    bottom: 14px;
   }
 
   .facility-card-counter {
@@ -2175,7 +2178,7 @@ body {
 
   .facility-hero-swiper,
   .facility-sub-swiper {
-    height: 260px;
+    max-height: 240px;
   }
 }
 
