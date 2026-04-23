@@ -1041,7 +1041,7 @@ body {
 }
 
 .efficiency-title-wrap .sec-eyebrow {
-  font-size: 20px;
+  font-size: 26px;
   font-weight: 700;
   color: #a6a6a6;
   line-height: 150%;
@@ -1742,16 +1742,17 @@ body {
 }
 
 .facility-header {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+  display: flex;
+  justify-content: space-between;
   gap: 60px;
   margin-bottom: 60px;
 }
 
 .facility-title-wrap .sec-eyebrow {
-  font-size: 15px;
-  color: var(--color-sub);
-  letter-spacing: 0.02em;
+  font-size: 26px;
+  color: #a6a6a6;
+  font-weight: 700;
+  line-height: 150%;
   margin-bottom: 12px;
 }
 
@@ -1765,29 +1766,32 @@ body {
 
 .facility-title-wrap .facility-desc {
   max-width: 460px;
-  font-size: 15px;
-  line-height: 1.8;
-  color: var(--color-sub);
+  font-size: 20px;
+  line-height: 160%;
+  color: #e0e0e0;
 }
 
 .facility-tabs-wrap {
+  position: relative;
+  right: 0;
+  width: 50%;
   align-self: end;
   text-align: right;
 }
 
 .facility-tabs {
   display: flex;
-  justify-content: flex-end;
-  gap: 60px;
-  padding-bottom: 14px;
-  border-bottom: 1px solid var(--color-line);
-  margin-bottom: 16px;
+  justify-content: space-between;
+  padding-top: 10px;
+  border-top: 1px solid var(--color-line);
+  margin-bottom: 30px;
   position: relative;
 }
 
 .facility-tab {
   position: relative;
   padding: 4px 0;
+  width: 50%;
   background: transparent;
   border: 0;
   color: var(--color-muted);
@@ -1813,14 +1817,14 @@ body {
   position: absolute;
   left: 0;
   right: 0;
-  bottom: -15px;
+  bottom: 40px;
   height: 2px;
   background: #fff;
 }
 
 .facility-tab-desc {
   display: none;
-  font-size: 14px;
+  font-size: 16px;
   color: var(--color-sub);
   line-height: 1.6;
 }
@@ -1855,7 +1859,6 @@ body {
 .facility-hero-swiper .swiper-wrapper,
 .facility-sub-swiper .swiper-wrapper {
   width: 100%;
-  height: 100%;
 }
 
 .facility-hero-swiper .swiper-slide,
@@ -1955,7 +1958,8 @@ body {
   align-items: center;
   gap: 10px;
   font-size: 13px;
-  color: rgba(255, 255, 255, 0.8);
+  font-weight: bold;
+  color: rgba(255, 255, 255, 1);
   letter-spacing: 0.08em;
 }
 
@@ -2049,8 +2053,7 @@ body {
   }
 
   .facility-header {
-    grid-template-columns: 1fr;
-    gap: 30px;
+    flex-direction: column;
     margin-bottom: 36px;
   }
 
@@ -2065,13 +2068,14 @@ body {
 
   .facility-tabs-wrap {
     text-align: left;
+    width: 100%;
   }
 
   .facility-tabs {
     justify-content: flex-start;
     gap: 40px;
     padding-bottom: 10px;
-    margin-bottom: 14px;
+    margin-bottom: 20px;
   }
 
   .facility-tab {
@@ -2082,13 +2086,40 @@ body {
     bottom: -11px;
   }
 
+  .facility-card-arrows {
+    display: none;
+  }
+
   .facility-hero {
-    margin-bottom: 28px;
+    margin-bottom: 50px;
   }
 
   .facility-row {
-    grid-template-columns: 1fr;
-    gap: 28px;
+    margin-left: 0px;
+    flex-direction: column-reverse;
+    gap: 50px;
+  }
+
+  .facility-sub:first-child {
+    margin-left: -20px;
+  }
+
+  .facility-sub:last-child {
+    margin-left: 25px;
+  }
+
+  .facility-sub:first-child .facility-static-img {
+    width: 70%;
+  }
+
+  .facility-sub:last-child .facility-static-img {
+    width: 95%;
+  }
+
+  .facility-sub:last-child .facility-sub-swiper {
+    width: 100%;
+    height: 100%;
+    margin: 0px;
   }
 
   .facility-sub--staggered {
@@ -2099,9 +2130,7 @@ body {
   .facility-hero .facility-static-img,
   .facility-sub-swiper .swiper-slide,
   .facility-sub .facility-static-img {
-    height: 62vw;
-    min-height: 240px;
-    max-height: 380px;
+    height: 240px;
   }
 
   .facility-disclaimer {
@@ -2112,7 +2141,7 @@ body {
   .facility-card-nav {
     left: 14px;
     right: 14px;
-    bottom: 14px;
+    bottom: 30px;
   }
 
   .facility-card-counter {
