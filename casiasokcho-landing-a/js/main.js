@@ -64,26 +64,6 @@
 (function () {
   'use strict';
 
-  /* ===== GALLERY SLIDER ===== */
-  const galleryTrack = document.getElementById('galleryTrack');
-  if (galleryTrack) {
-    const items = galleryTrack.querySelectorAll('.gallery-item');
-    const total = items.length;
-    let current = 0;
-
-    function goGallery(idx) {
-      current = (idx + total) % total;
-      galleryTrack.style.transform = 'translateX(-' + (current * 100) + '%)';
-    }
-
-    const prevBtn = document.querySelector('.btn-gallery-prev');
-    const nextBtn = document.querySelector('.btn-gallery-next');
-    if (prevBtn) prevBtn.addEventListener('click', function () { goGallery(current - 1); });
-    if (nextBtn) nextBtn.addEventListener('click', function () { goGallery(current + 1); });
-
-    setInterval(function () { goGallery(current + 1); }, 4000);
-  }
-
   /* ===== ROOM SWIPER + LIGHTBOX ===== */
   const roomSwiperEl = document.getElementById('roomSwiper');
   if (roomSwiperEl && window.Swiper) {
@@ -375,14 +355,6 @@
         .finally(function () {
           if (submitBtn) submitBtn.disabled = false;
         });
-    });
-  }
-
-  /* ===== HAMBURGER MENU ===== */
-  const btnMenu = document.querySelector('.btn-menu');
-  if (btnMenu) {
-    btnMenu.addEventListener('click', function () {
-      this.classList.toggle('is-open');
     });
   }
 
