@@ -285,40 +285,114 @@
     <!-- ROOM: 객실 안내 -->
     <section class="sec sec-room">
       <div class="inner">
-        <div class="room-header">
-          <div class="room-header-text">
-            <p data-editable="text" data-uid="home-ct-txt-34" class="sec-eyebrow">Room</p>
-            <h2 data-editable="text" data-uid="home-ct-txt-35" class="sec-title">공간 그 이상의 경험</h2>
+        <div class="room-intro">
+          <p data-editable="text" data-uid="home-ct-txt-34" class="sec-eyebrow">거주에 가까운</p>
+          <h2 data-editable="text" data-uid="home-ct-txt-35" class="sec-title">24PY 스위트</h2>
+          <p data-editable="text" data-uid="home-ct-txt-36" class="room-desc">
+            전용79㎡(24평)의 광활한 스위트룸급 구조로 설계되었습니다. 단순한 투숙을 넘어 일주일간의 '거주'가 가능하도록 간이 주방이 포함된 완벽한 공간을 제공합니다.
+          </p>
+        </div>
+
+        <div class="room-level-bar">
+          <p class="room-level-name" data-room-level-name>DELUXE</p>
+          <p class="room-level-tagline" data-room-level-tagline>편안한 휴식을 위한 기본형 객실</p>
+        </div>
+
+        <div class="room-tabs-row">
+          <div class="room-tabs" role="tablist">
+            <button type="button" class="room-tab is-active" role="tab" data-idx="0" data-name="DELUXE" data-tagline="편안한 휴식을 위한 기본형 객실">Deluxe</button>
+            <button type="button" class="room-tab" role="tab" data-idx="1" data-name="PREMIER" data-tagline="더 여유로운 재류를 위한 균형">Premier</button>
+            <button type="button" class="room-tab" role="tab" data-idx="2" data-name="SIGNATURE" data-tagline="경험의 정점을 원하는 순간을 위해">Signature</button>
           </div>
           <div class="room-nav">
-            <button type="button" class="btn-slide-prev" aria-label="이전">
-              <img data-object="FIXATION" src="images/common/btn-prev-arr.svg" alt="">
+            <button type="button" class="btn-room-prev" aria-label="이전">
+              <img data-object="FIXATION" src="images/common/arr-prev-w.svg" alt="">
             </button>
-            <div class="slide-counter">
-              <span class="slide-current">01</span>
-              <span class="slide-bar"><span class="slide-progress"></span></span>
-              <span class="slide-total">03</span>
-            </div>
-            <button type="button" class="btn-slide-next" aria-label="다음">
-              <img data-object="FIXATION" src="images/common/btn-next-arr.svg" alt="">
+            <button type="button" class="btn-room-next" aria-label="다음">
+              <img data-object="FIXATION" src="images/common/arr-next-w.svg" alt="">
             </button>
           </div>
         </div>
+
+        <div class="swiper room-swiper" id="roomSwiper">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <div class="room-gallery" data-type-idx="0">
+                <button type="button" class="room-gallery-main" data-img-idx="0" aria-label="확대 보기">
+                  <img data-editable="image" data-uid="home-ct-img-dlx-1" src="images/sub/dlx-img-1.jpg" alt="Deluxe 대표 이미지">
+                </button>
+                <div class="room-gallery-sub">
+                  <button type="button" class="room-gallery-sub-item" data-img-idx="1" aria-label="확대 보기">
+                    <img data-editable="image" data-uid="home-ct-img-dlx-2" src="images/sub/dlx-img-2.jpg" alt="Deluxe 이미지 2">
+                  </button>
+                  <button type="button" class="room-gallery-sub-item" data-img-idx="2" aria-label="확대 보기">
+                    <img data-editable="image" data-uid="home-ct-img-dlx-3" src="images/sub/dlx-img-3.jpg" alt="Deluxe 이미지 3">
+                  </button>
+                  <button type="button" class="room-gallery-sub-item" data-img-idx="3" aria-label="확대 보기">
+                    <img data-editable="image" data-uid="home-ct-img-dlx-4" src="images/sub/dlx-img-4.jpg" alt="Deluxe 이미지 4">
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="room-gallery" data-type-idx="1">
+                <button type="button" class="room-gallery-main" data-img-idx="0" aria-label="확대 보기">
+                  <img data-editable="image" data-uid="home-ct-img-pre-1" src="images/sub/pre-img-1.jpg" alt="Premier 대표 이미지">
+                </button>
+                <div class="room-gallery-sub">
+                  <button type="button" class="room-gallery-sub-item" data-img-idx="1" aria-label="확대 보기">
+                    <img data-editable="image" data-uid="home-ct-img-pre-2" src="images/sub/pre-img-2.jpg" alt="Premier 이미지 2">
+                  </button>
+                  <button type="button" class="room-gallery-sub-item" data-img-idx="2" aria-label="확대 보기">
+                    <img data-editable="image" data-uid="home-ct-img-pre-3" src="images/sub/pre-img-3.jpg" alt="Premier 이미지 3">
+                  </button>
+                  <button type="button" class="room-gallery-sub-item" data-img-idx="3" aria-label="확대 보기">
+                    <img data-editable="image" data-uid="home-ct-img-pre-4" src="images/sub/pre-img-4.jpg" alt="Premier 이미지 4">
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="room-gallery" data-type-idx="2">
+                <button type="button" class="room-gallery-main" data-img-idx="0" aria-label="확대 보기">
+                  <img data-editable="image" data-uid="home-ct-img-sig-1" src="images/sub/sig-img-1.jpg" alt="Signature 대표 이미지">
+                </button>
+                <div class="room-gallery-sub">
+                  <button type="button" class="room-gallery-sub-item" data-img-idx="1" aria-label="확대 보기">
+                    <img data-editable="image" data-uid="home-ct-img-sig-2" src="images/sub/sig-img-2.jpg" alt="Signature 이미지 2">
+                  </button>
+                  <button type="button" class="room-gallery-sub-item" data-img-idx="2" aria-label="확대 보기">
+                    <img data-editable="image" data-uid="home-ct-img-sig-3" src="images/sub/sig-img-3.jpg" alt="Signature 이미지 3">
+                  </button>
+                  <button type="button" class="room-gallery-sub-item" data-img-idx="3" aria-label="확대 보기">
+                    <img data-editable="image" data-uid="home-ct-img-sig-4" src="images/sub/sig-img-4.jpg" alt="Signature 이미지 4">
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <a href="#consult" data-editable="text" data-uid="home-ct-btn-room" class="btn-primary room-btn">상담 신청하기</a>
       </div>
-      <div class="room-slider" id="roomSlider">
-        <div class="room-slides">
-          <figure class="room-slide">
-            <img data-editable="image" data-uid="home-ct-img-15" src="images/sub/roomtype-img-1.jpg" alt="스위트 A타입">
-            <figcaption data-editable="text" data-uid="home-ct-txt-36">Suite Type A</figcaption>
-          </figure>
-          <figure class="room-slide">
-            <img data-editable="image" data-uid="home-ct-img-16" src="images/sub/roomtype-img-2.jpg" alt="스위트 B타입">
-            <figcaption data-editable="text" data-uid="home-ct-txt-37">Suite Type B</figcaption>
-          </figure>
-          <figure class="room-slide">
-            <img data-editable="image" data-uid="home-ct-img-17" src="images/sub/roomtype-img-3.jpg" alt="스위트 C타입">
-            <figcaption data-editable="text" data-uid="home-ct-txt-38">Suite Type C</figcaption>
-          </figure>
+
+      <div class="room-lightbox" id="roomLightbox" hidden aria-hidden="true" role="dialog" aria-modal="true">
+        <button type="button" class="room-lightbox-close" aria-label="닫기">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <div class="swiper room-lightbox-swiper" id="roomLightboxSwiper">
+          <div class="swiper-wrapper"></div>
+          <button type="button" class="room-lightbox-prev" aria-label="이전">
+            <img data-object="FIXATION" src="images/common/arr-prev-w.svg" alt="">
+          </button>
+          <button type="button" class="room-lightbox-next" aria-label="다음">
+            <img data-object="FIXATION" src="images/common/arr-next-w.svg" alt="">
+          </button>
+          <div class="room-lightbox-counter">
+            <span class="room-lightbox-current">01</span>
+            <span class="room-lightbox-sep">/</span>
+            <span class="room-lightbox-total">04</span>
+          </div>
         </div>
       </div>
     </section>

@@ -84,34 +84,139 @@
     setInterval(function () { goGallery(current + 1); }, 4000);
   }
 
-  /* ===== ROOM SLIDER ===== */
-  const roomSlider = document.getElementById('roomSlider');
-  if (roomSlider) {
-    const slides = roomSlider.querySelector('.room-slides');
-    const items = roomSlider.querySelectorAll('.room-slide');
-    const total = items.length;
-    let current = 0;
+  /* ===== ROOM SWIPER + LIGHTBOX ===== */
+  const roomSwiperEl = document.getElementById('roomSwiper');
+  if (roomSwiperEl && window.Swiper) {
+    const tabs = document.querySelectorAll('.room-tab');
+    const levelNameEl = document.querySelector('[data-room-level-name]');
+    const levelTaglineEl = document.querySelector('[data-room-level-tagline]');
 
-    const progressEl = document.querySelector('.slide-progress');
-    const currentEl = document.querySelector('.slide-current');
-
-    function updateRoomCounter() {
-      if (currentEl) currentEl.textContent = String(current + 1).padStart(2, '0');
-      if (progressEl) progressEl.style.width = ((current + 1) / total * 100) + '%';
+    function syncLevel(idx) {
+      tabs.forEach(function (t) {
+        t.classList.toggle('is-active', Number(t.dataset.idx) === idx);
+      });
+      const activeTab = tabs[idx];
+      if (activeTab) {
+        if (levelNameEl) levelNameEl.textContent = activeTab.dataset.name || '';
+        if (levelTaglineEl) levelTaglineEl.textContent = activeTab.dataset.tagline || '';
+      }
     }
 
-    function goRoom(idx) {
-      current = (idx + total) % total;
-      slides.style.transform = 'translateX(-' + (current * 100) + '%)';
-      updateRoomCounter();
+    const roomSwiper = new Swiper('#roomSwiper', {
+      slidesPerView: 1,
+      spaceBetween: 0,
+      speed: 500,
+      grabCursor: true,
+      navigation: {
+        prevEl: '.btn-room-prev',
+        nextEl: '.btn-room-next',
+      },
+      on: {
+        slideChange: function () {
+          syncLevel(this.activeIndex);
+        }
+      }
+    });
+
+    tabs.forEach(function (tab) {
+      tab.addEventListener('click', function () {
+        const idx = Number(tab.dataset.idx);
+        roomSwiper.slideTo(idx);
+      });
+    });
+
+    /* ----- LIGHTBOX ----- */
+    const lightbox = document.getElementById('roomLightbox');
+    const lightboxSwiperEl = document.getElementById('roomLightboxSwiper');
+    const lightboxWrapper = lightboxSwiperEl ? lightboxSwiperEl.querySelector('.swiper-wrapper') : null;
+    const lightboxClose = lightbox ? lightbox.querySelector('.room-lightbox-close') : null;
+    const currentEl = lightbox ? lightbox.querySelector('.room-lightbox-current') : null;
+    const totalEl = lightbox ? lightbox.querySelector('.room-lightbox-total') : null;
+    let lightboxSwiper = null;
+
+    function buildLightbox(typeIdx, startIdx) {
+      if (!lightboxWrapper) return;
+      const gallery = roomSwiperEl.querySelectorAll('.room-gallery')[typeIdx];
+      if (!gallery) return;
+      const imgs = gallery.querySelectorAll('img');
+      lightboxWrapper.innerHTML = '';
+      imgs.forEach(function (img) {
+        const slide = document.createElement('div');
+        slide.className = 'swiper-slide';
+        const cloned = document.createElement('img');
+        cloned.src = img.getAttribute('src');
+        cloned.alt = img.getAttribute('alt') || '';
+        slide.appendChild(cloned);
+        lightboxWrapper.appendChild(slide);
+      });
+
+      if (totalEl) totalEl.textContent = String(imgs.length).padStart(2, '0');
+
+      if (lightboxSwiper) {
+        lightboxSwiper.destroy(true, true);
+        lightboxSwiper = null;
+      }
+
+      lightboxSwiper = new Swiper('#roomLightboxSwiper', {
+        slidesPerView: 1,
+        spaceBetween: 20,
+        loop: true,
+        speed: 400,
+        initialSlide: startIdx,
+        keyboard: { enabled: true },
+        navigation: {
+          prevEl: '.room-lightbox-prev',
+          nextEl: '.room-lightbox-next',
+        },
+        on: {
+          slideChange: function () {
+            if (currentEl) currentEl.textContent = String(this.realIndex + 1).padStart(2, '0');
+          }
+        }
+      });
+
+      if (currentEl) currentEl.textContent = String(startIdx + 1).padStart(2, '0');
     }
 
-    const prevBtn = document.querySelector('.btn-slide-prev');
-    const nextBtn = document.querySelector('.btn-slide-next');
-    if (prevBtn) prevBtn.addEventListener('click', function () { goRoom(current - 1); });
-    if (nextBtn) nextBtn.addEventListener('click', function () { goRoom(current + 1); });
+    function openLightbox(typeIdx, imgIdx) {
+      if (!lightbox) return;
+      buildLightbox(typeIdx, imgIdx);
+      lightbox.hidden = false;
+      lightbox.setAttribute('aria-hidden', 'false');
+      document.body.style.overflow = 'hidden';
+    }
 
-    updateRoomCounter();
+    function closeLightbox() {
+      if (!lightbox) return;
+      lightbox.hidden = true;
+      lightbox.setAttribute('aria-hidden', 'true');
+      document.body.style.overflow = '';
+      if (lightboxSwiper) {
+        lightboxSwiper.destroy(true, true);
+        lightboxSwiper = null;
+      }
+    }
+
+    roomSwiperEl.querySelectorAll('.room-gallery').forEach(function (gallery) {
+      const typeIdx = Number(gallery.dataset.typeIdx);
+      gallery.querySelectorAll('[data-img-idx]').forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          openLightbox(typeIdx, Number(btn.dataset.imgIdx));
+        });
+      });
+    });
+
+    if (lightboxClose) lightboxClose.addEventListener('click', closeLightbox);
+    if (lightbox) {
+      lightbox.addEventListener('click', function (e) {
+        if (e.target === lightbox) closeLightbox();
+      });
+    }
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && lightbox && !lightbox.hidden) closeLightbox();
+    });
+
+    syncLevel(0);
   }
 
   /* ===== FACILITY SLIDER ===== */
