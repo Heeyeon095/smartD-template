@@ -1909,8 +1909,17 @@ body {
   width: 50vw;
 }
 
+.facility-sub:last-child .facility-sub-swiper {
+  width: 50vw;
+  height: 40vw;
+}
+
 .facility-sub-swiper .swiper-slide {
   height: 420px;
+}
+
+.facility-sub:last-child .facility-sub-swiper .swiper-slide {
+  height: 100%;
 }
 
 .facility-sub-swiper .swiper-slide img {
