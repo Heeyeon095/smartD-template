@@ -721,68 +721,91 @@ body {
   font-weight: 700;
 }
 
-/* ===== PREMIUM 06 (완벽한 인프라) ===== */
+/* ===== PREMIUM 06 (완벽한 인프라) — B_옐로 시안 기준 ===== */
 .sec-premium06 {
   padding: 160px 90px;
-  background: var(--color-surface);
+  background: #F5F5F5;
 }
 
 .premium06-inner {
   max-width: 1260px;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-  gap: 80px;
+  grid-template-columns: minmax(0, 1fr) 725px;
+  gap: 0;
   align-items: start;
 }
 
 .premium06-head {
-  padding-top: 40px;
+  padding-top: 0;
+  padding-right: 40px;
 }
 
-.premium06-gallery {
-  display: flex;
-  gap: 24px;
+.premium06-stack {
+  display: grid;
+  grid-template-rows: 420px 120px 120px;
+  gap: 8px;
 }
 
 .infra-card {
   position: relative;
   overflow: hidden;
-  background: #D9D9D9;
+  background: #1A1A1A;
 }
 
-.infra-card img {
+.infra-card > img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   display: block;
 }
 
-.infra-card--primary {
-  flex: 1.1;
-  height: 540px;
+.infra-card-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(0,0,0,0.35) 0%, rgba(0,0,0,0.55) 100%);
 }
 
-.infra-stack {
-  flex: 1;
+.infra-card-body {
+  position: absolute;
+  top: 50%;
+  left: 40px;
+  transform: translateY(-50%);
   display: flex;
   flex-direction: column;
-  gap: 24px;
+  gap: 8px;
+  color: #ffffff;
 }
 
-.infra-stack .infra-card {
-  height: 258px;
+.infra-card--hero .infra-card-body {
+  top: auto;
+  bottom: 40px;
+  left: 40px;
+  transform: none;
+}
+
+.infra-percent {
+  font-size: 32px;
+  line-height: 41.6px;
+  font-weight: 400;
+  color: #E6E6E6;
+  letter-spacing: 0;
+  margin: 0;
+}
+
+.infra-percent--accent {
+  color: #FEBE14;
 }
 
 .infra-label {
-  position: absolute;
-  left: 24px;
-  bottom: 24px;
-  background: rgba(0, 0, 0, 0.5);
-  color: #ffffff;
-  font-size: 15px;
-  font-weight: 700;
-  padding: 8px 16px;
+  position: static;
+  background: transparent;
+  color: #CCCCCC;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 300;
+  padding: 0;
+  margin: 0;
 }
 
 /* ===== PREMIUM 07 (속초 일주일 살기 최적화) ===== */
@@ -826,23 +849,68 @@ body {
   margin: 0 auto;
 }
 
-.premium07-media {
-  width: 100%;
-  height: 580px;
-  margin: 0 auto;
-  max-width: 1046px;
-  overflow: hidden;
-  background: #D9D9D9;
+.premium07-slider {
   position: relative;
-  z-index: 1;
+  width: 100%;
+  max-width: 1046px;
+  margin: 0 auto;
   transform: translateY(100px);
+  z-index: 1;
 }
 
-.premium07-media img {
+.premium07-swiper {
+  width: 100%;
+  height: 580px;
+  overflow: hidden;
+  background: #D9D9D9;
+}
+
+.premium07-swiper .swiper-slide {
+  width: 100%;
+  height: 100%;
+}
+
+.premium07-swiper .swiper-slide img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   display: block;
+}
+
+.btn-premium07-prev,
+.btn-premium07-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 0;
+  border-radius: 50%;
+  background: #1A1A1A;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.btn-premium07-prev {
+  left: -90px;
+}
+
+.btn-premium07-next {
+  right: -90px;
+}
+
+.btn-premium07-prev:hover,
+.btn-premium07-next:hover {
+  background: #333333;
+}
+
+.btn-premium07-prev img,
+.btn-premium07-next img {
+  width: 14px;
 }
 
 .sec-premium07+.sec {
@@ -1172,31 +1240,31 @@ body {
 
   .premium06-head {
     padding-top: 0;
-    text-align: center;
+    padding-right: 0;
   }
 
-  .premium06-head .premium-tag,
-  .premium06-head .premium-kicker,
-  .premium06-head .premium-title,
-  .premium06-head .premium-body {
-    text-align: center;
+  .premium06-stack {
+    grid-template-rows: 260px 120px 120px;
+    gap: 8px;
   }
 
-  .premium06-gallery {
-    flex-direction: column;
-    gap: 16px;
+  .infra-card-body {
+    left: 24px;
   }
 
-  .infra-card--primary {
-    height: 260px;
+  .infra-card--hero .infra-card-body {
+    bottom: 24px;
+    left: 24px;
   }
 
-  .infra-stack {
-    flex-direction: row;
+  .infra-percent {
+    font-size: 26px;
+    line-height: 34px;
   }
 
-  .infra-stack .infra-card {
-    height: 160px;
+  .infra-label {
+    font-size: 14px;
+    line-height: 22px;
   }
 
   /* PREMIUM 07 */
@@ -1212,9 +1280,20 @@ body {
     margin-bottom: 40px;
   }
 
-  .premium07-media {
-    height: 260px;
+  .premium07-slider {
     transform: translateY(60px);
+  }
+
+  .premium07-swiper {
+    height: 260px;
+  }
+
+  .btn-premium07-prev {
+    left: 12px;
+  }
+
+  .btn-premium07-next {
+    right: 12px;
   }
 
   .sec-premium07+.sec {
@@ -1392,8 +1471,6 @@ body {
    혜택 안내 / 룸 / 확실한 기회 / 컨택트 / 푸터
    ================================================= */
 
-.sec-benefit,
-.sec-compare,
 .sec-consult,
 #layout-footer,
 .premium01-slider {
@@ -1410,8 +1487,6 @@ body {
   --inner-pad: 20px;
 }
 
-.sec-benefit .sec-title,
-.sec-compare .sec-title,
 .sec-consult .sec-title {
   font-size: 45px;
   line-height: 1.3;
@@ -1421,15 +1496,11 @@ body {
 
 @media (max-width: 767px) {
 
-  .sec-benefit .sec-title,
-  .sec-compare .sec-title,
   .sec-consult .sec-title {
     font-size: 32px;
   }
 }
 
-.sec-benefit .sec-eyebrow,
-.sec-compare .sec-eyebrow,
 .sec-consult .sec-eyebrow {
   font-size: 13px;
   font-weight: 700;
@@ -2490,120 +2561,160 @@ body {
 }
 
 
-/* ===== COMPARE (from A, adapted for B) ===== */
-/* ===== COMPARE ===== */
+/* ===== COMPARE (B_옐로 시안 — sec-benefit 스타일 참고) ===== */
 .sec-compare {
-  padding: 80px 0;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url(../images/sub/compare-bg.jpg);
+  position: relative;
+  padding: 120px 0;
+  overflow: hidden;
+  text-align: center;
+  background-image: url(../images/sub/b-compare-bg.jpg);
   background-size: cover;
   background-position: center;
-  text-align: center;
+}
+
+.sec-compare::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.8);
+  mix-blend-mode: lighten;
+  pointer-events: none;
+}
+
+.sec-compare .inner {
+  position: relative;
+  max-width: 1260px;
+  margin: 0 auto;
+  padding: 0 90px;
+  z-index: 1;
 }
 
 .sec-compare .sec-eyebrow {
   font-size: 26px;
   font-weight: 700;
-  color: #a6a6a6;
-  line-height: 150%;
-  margin-bottom: 12px;
+  line-height: 39px;
+  color: #666666;
+  text-transform: none;
+  letter-spacing: 0;
+  margin-bottom: 16px;
 }
 
 .sec-compare .sec-title {
   text-align: center;
   font-size: 45px;
   font-weight: 700;
-  line-height: 130%;
-  color: #fff;
+  line-height: 58.5px;
+  color: #1A1A1A;
+  margin-bottom: 24px;
 }
 
 .sec-compare .sec-desc {
-  margin-top: 30px;
+  margin-top: 0;
+  margin-bottom: 56px;
   font-size: 20px;
-  line-height: 160%;
-  color: #e0e0e0;
+  line-height: 32px;
+  color: #333333;
   font-weight: 300;
 }
 
 .compare-table-wrap {
   overflow-x: auto;
-  margin-top: 40px;
+  margin-top: 0;
   padding: 70px;
-  background-color: #111;
+  background: #ffffff;
 }
 
 .compare-table {
   width: 100%;
   border-collapse: collapse;
   font-size: 20px;
-  line-height: 130%;
-}
-
-.compare-table tr td:last-child {
-  font-weight: bold;
+  line-height: 32px;
+  border-top: 2px solid #2a2a2a;
+  border-bottom: 2px solid #2a2a2a;
 }
 
 .compare-table th,
 .compare-table td {
-  padding: 20px;
-  border: 1px solid var(--color-line);
-  border-right: none;
-  border-left: none;
+  padding: 22px 20px;
+  border-bottom: 1px solid #2a2a2a;
   text-align: center;
   vertical-align: middle;
+  color: #333333;
+}
+
+.compare-table tr:last-child td,
+.compare-table tr:last-child th {
+  border-bottom: none;
+}
+
+.compare-table thead tr {
+  background: #f5f5f5;
 }
 
 .compare-table thead th {
-  background: var(--color-dark-3);
-  color: var(--color-sub);
-  font-weight: 500;
+  font-weight: 700;
+  color: #1A1A1A;
+  text-align: center;
 }
 
 .compare-table thead .col-highlight {
-  background: var(--color-accent);
-  color: #cfcfcf;
+  background: var(--color-accent-deep);
+  color: #1A1A1A;
   font-weight: 700;
   width: 33%;
 }
 
 .compare-table tbody td {
-  color: #cfcfcf;
+  color: #333333;
   font-weight: 400;
-  line-height: 130%;
+}
+
+.compare-table tbody td:first-child {
+  font-weight: 700;
+  color: #1A1A1A;
+  background: #fafafa;
 }
 
 @media (max-width: 767px) {
   .sec-compare {
-    padding: 50px 20px;
+    padding: 70px 0;
   }
 
   .sec-compare .inner {
-    padding: 0px;
+    padding: 0 20px;
   }
 
   .sec-compare .sec-eyebrow {
-    font-size: 18px;
-    margin-bottom: 8px;
+    font-size: 16px;
+    line-height: 1.4;
+    margin-bottom: 10px;
   }
 
   .sec-compare .sec-title {
     font-size: 28px;
-    line-height: 1.25;
+    line-height: 1.3;
+    margin-bottom: 16px;
   }
 
   .sec-compare .sec-desc {
-    margin-top: 20px;
-    font-size: 16px;
+    font-size: 14px;
     line-height: 1.7;
+    margin-bottom: 32px;
   }
 
   .compare-table-wrap {
-    padding: 0px;
-    margin-top: 30px;
+    padding: 20px;
   }
 
   .compare-table {
-    font-size: 20px;
+    font-size: 13px;
     line-height: 1.4;
+    min-width: 520px;
+  }
+
+  .compare-table th,
+  .compare-table td {
+    padding: 14px 10px;
   }
 
   .compare-table thead .col-highlight:first-child {

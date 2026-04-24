@@ -40,6 +40,23 @@
   updateCounter(0);
 })();
 
+/* ===== PREMIUM 07 SWIPER ===== */
+(function () {
+  var el = document.getElementById('premium07Swiper');
+  if (!el || !window.Swiper) return;
+
+  new Swiper('#premium07Swiper', {
+    loop: true,
+    slidesPerView: 1,
+    speed: 500,
+    grabCursor: true,
+    navigation: {
+      prevEl: '.btn-premium07-prev',
+      nextEl: '.btn-premium07-next',
+    }
+  });
+})();
+
 (function () {
   'use strict';
 
