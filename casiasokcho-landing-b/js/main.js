@@ -1,21 +1,21 @@
-// CASSIA SOKCHO LANDING — A (BLACK)
+// CASSIA SOKCHO LANDING — B (YELLOW)
 
-/* ===== MERIT SWIPER ===== */
+/* ===== PREMIUM 01 SWIPER (A안 merit-swiper 스타일) ===== */
 (function () {
-  var meritEl = document.getElementById('meritSwiper');
-  if (!meritEl) return;
+  var swEl = document.getElementById('premium01Swiper');
+  if (!swEl || !window.Swiper) return;
 
-  var slides = meritEl.querySelectorAll('.swiper-slide');
+  var slides = swEl.querySelectorAll('.swiper-slide');
   var total = slides.length;
   var currentEl = document.querySelector('.merit-current');
   var progressEl = document.querySelector('.merit-progress');
 
-  function updateMeritCounter(idx) {
+  function updateCounter(idx) {
     if (currentEl) currentEl.textContent = String(idx + 1).padStart(2, '0');
     if (progressEl) progressEl.style.width = ((idx + 1) / total * 100) + '%';
   }
 
-  var meritSwiper = new Swiper('#meritSwiper', {
+  new Swiper('#premium01Swiper', {
     loop: true,
     navigation: {
       prevEl: '.btn-merit-prev',
@@ -27,44 +27,23 @@
       enabled: false,
     },
     breakpoints: {
-      0: {
-        pagination: { enabled: true }
-      },
-      768: {
-        pagination: { enabled: false }
-      }
+      0: { pagination: { enabled: true } },
+      768: { pagination: { enabled: false } }
     },
     on: {
       slideChange: function () {
-        updateMeritCounter(this.realIndex);
+        updateCounter(this.realIndex);
       }
     }
   });
 
-  updateMeritCounter(0);
-})();
-
-/* ===== EXCLUSIVE SWIPER ===== */
-(function () {
-  var exEl = document.getElementById('exclusiveSwiper');
-  if (!exEl) return;
-
-  new Swiper('#exclusiveSwiper', {
-    slidesPerView: 'auto',
-    spaceBetween: 16,
-    grabCursor: true,
-    breakpoints: {
-      768: {
-        spaceBetween: 24
-      }
-    }
-  });
+  updateCounter(0);
 })();
 
 (function () {
   'use strict';
 
-  /* ===== ROOM SWIPER + LIGHTBOX ===== */
+  /* ===== ROOM SWIPER + LIGHTBOX (A안 기반) ===== */
   const roomSwiperEl = document.getElementById('roomSwiper');
   if (roomSwiperEl && window.Swiper) {
     const tabs = document.querySelectorAll('.room-tab');
@@ -108,7 +87,6 @@
       });
     });
 
-    /* ----- LIGHTBOX ----- */
     const lightbox = document.getElementById('roomLightbox');
     const lightboxSwiperEl = document.getElementById('roomLightboxSwiper');
     const lightboxWrapper = lightboxSwiperEl ? lightboxSwiperEl.querySelector('.swiper-wrapper') : null;
@@ -202,73 +180,7 @@
     syncLevel(0);
   }
 
-  /* ===== FACILITY TABS + CARD SWIPERS ===== */
-  const facilitySection = document.querySelector('.sec-facility');
-  if (facilitySection && window.Swiper) {
-    const tabs = facilitySection.querySelectorAll('.facility-tab');
-    const panels = facilitySection.querySelectorAll('.facility-panel');
-    const tabDescs = facilitySection.querySelectorAll('.facility-tab-desc');
-
-    function activateTab(name) {
-      tabs.forEach(function (t) {
-        t.classList.toggle('is-active', t.dataset.tab === name);
-      });
-      panels.forEach(function (p) {
-        p.classList.toggle('is-active', p.dataset.panel === name);
-      });
-      tabDescs.forEach(function (d) {
-        d.classList.toggle('is-active', d.dataset.tabDesc === name);
-      });
-      Object.values(cardSwipers).forEach(function (sw) {
-        if (sw && sw.update) sw.update();
-      });
-    }
-
-    tabs.forEach(function (tab) {
-      tab.addEventListener('click', function () {
-        activateTab(tab.dataset.tab);
-      });
-    });
-
-    const cardSwipers = {};
-    const swiperTargets = facilitySection.querySelectorAll('.facility-hero-swiper, .facility-sub-swiper');
-    swiperTargets.forEach(function (el, idx) {
-      const totalSlides = el.querySelectorAll('.swiper-slide').length;
-      const currentEl = el.querySelector('.current');
-      const progressEl = el.querySelector('.progress');
-      const prevBtn = el.querySelector('.btn-fac-card-prev');
-      const nextBtn = el.querySelector('.btn-fac-card-next');
-
-      function updateCounter(i) {
-        if (currentEl) currentEl.textContent = String(i + 1).padStart(2, '0');
-        if (progressEl) progressEl.style.width = ((i + 1) / totalSlides * 100) + '%';
-      }
-
-      const sw = new Swiper(el, {
-        slidesPerView: 1,
-        spaceBetween: 0,
-        speed: 500,
-        grabCursor: true,
-        allowTouchMove: true,
-        observer: true,
-        observeParents: true,
-        navigation: {
-          prevEl: prevBtn,
-          nextEl: nextBtn,
-        },
-        on: {
-          slideChange: function () {
-            updateCounter(this.activeIndex);
-          }
-        }
-      });
-
-      updateCounter(0);
-      cardSwipers[idx] = sw;
-    });
-  }
-
-  /* ===== CONSULT FORM ===== */
+  /* ===== CONSULT FORM (A안 기반) ===== */
   var SALES_BASE = 'https://cassia.bunpil.com';
   var CONSULT_ENDPOINT = SALES_BASE + '/ajax/contact/request';
   var CONSULT_PAYLOAD = { type: 's', cpnNo: 1, userNo: 1632 };
@@ -276,7 +188,6 @@
   var consultForm = document.getElementById('consultForm');
   if (consultForm) {
 
-    // 약관 자세히보기 토글
     var termsToggle = consultForm.querySelector('.terms-toggle');
     var termsCollapse = document.getElementById('termsCollapse');
     if (termsToggle && termsCollapse) {
@@ -288,7 +199,6 @@
       });
     }
 
-    // 전체 동의 ↔ 개별 체크박스 연동
     var agreeAll = document.getElementById('agreeAll');
     var agreeItems = consultForm.querySelectorAll('.agree-item');
 
@@ -304,7 +214,6 @@
       });
     });
 
-    // 폼 제출
     consultForm.addEventListener('submit', function (e) {
       e.preventDefault();
       var name  = consultForm.querySelector('#consultName').value.trim();
