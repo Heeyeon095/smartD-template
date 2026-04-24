@@ -599,6 +599,128 @@ body {
   color: var(--color-text-2);
 }
 
+/* ===== PREMIUM 04 (숙박 앱 요금 대비 최대 40% 이상 할인) ===== */
+.sec-premium04 {
+  padding: 0 0 160px;
+  background: var(--color-surface);
+}
+
+.premium04-inner {
+  max-width: 1260px;
+  margin: 0 auto;
+  padding: 0 90px;
+}
+
+.premium04-head {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.premium04-head .premium-tag {
+  text-align: center;
+  display: block;
+}
+
+.premium04-head .premium-kicker,
+.premium04-head .premium-title,
+.premium04-head .premium-body {
+  text-align: center;
+}
+
+.compare-card {
+  display: flex;
+  gap: 40px;
+  padding: 70px 60px;
+  border-radius: 30px;
+  background: #ffffff;
+}
+
+.compare-labels {
+  flex: 0 0 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 32px;
+}
+
+.compare-tracks {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 32px;
+  padding: 8px 0;
+  border-left: 2px solid #D9D9D9;
+}
+
+.compare-list {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.compare-row {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  align-items: center;
+  gap: 24px;
+}
+
+.compare-label {
+  font-size: 18px;
+  line-height: 48px;
+  font-weight: 700;
+  color: var(--color-text-2);
+}
+
+.compare-track {
+  position: relative;
+  height: 48px;
+  display: flex;
+  align-items: stretch;
+}
+
+.compare-bar {
+  position: relative;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding-right: 24px;
+  box-sizing: border-box;
+}
+
+.compare-bar--yellow {
+  position: relative;
+  z-index: 1;
+  background: linear-gradient(90deg, #EDEDED 0%, #F2B705 100%);
+  border-top-right-radius: 100px;
+  border-bottom-right-radius: 100px;
+}
+
+.compare-bar--gray {
+  background: #5A5A5A;
+  border-top-right-radius: 100px;
+  border-bottom-right-radius: 100px;
+  order: 2;
+  margin-left: -24px;
+}
+
+.compare-bar-text {
+  font-size: 14px;
+  color: #ffffff;
+  font-weight: 400;
+  white-space: nowrap;
+  display: inline-flex;
+  align-items: baseline;
+  gap: 6px;
+}
+
+.compare-bar-text b {
+  font-size: 18px;
+  font-weight: 700;
+}
+
 /* ===== PREMIUM 06 (완벽한 인프라) ===== */
 .sec-premium06 {
   padding: 160px 90px;
