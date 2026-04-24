@@ -513,7 +513,7 @@ body {
 
 .premium03-head {
   text-align: center;
-  margin-bottom: 80px;
+  margin-bottom: 50px;
 }
 
 .premium03-head .premium-tag {
@@ -529,30 +529,32 @@ body {
 
 .chart-card {
   background: #ffffff;
-  padding: 80px 90px;
+  padding: 60px 50px 90px;
   position: relative;
+  border-radius: 30px;
 }
 
 .chart-legend {
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  gap: 16px;
-  margin-bottom: 32px;
+  margin-bottom: 50px;
   font-size: 14px;
   font-weight: 700;
   color: var(--color-text-2);
 }
 
 .legend-dot {
-  width: 12px;
-  height: 12px;
+  width: 24px;
+  height: 24px;
   display: inline-block;
-  margin-right: 4px;
+  margin-right: 8px;
+  margin-left: 20px;
+  border-radius: 100px;
 }
 
 .legend-dot--accent {
-  background: var(--color-accent-deep);
+  background-color: #666;
 }
 
 .legend-dot--alt {
@@ -566,7 +568,6 @@ body {
   gap: 40px;
   height: 360px;
   border-bottom: 2px solid #D4D4D4;
-  padding-bottom: 18px;
   position: relative;
 }
 
@@ -577,17 +578,16 @@ body {
   justify-content: flex-end;
   height: 100%;
   position: relative;
+  border-right: 2px solid #d4d4d4;
 }
 
 .chart-bar .bar {
   width: 40px;
   height: var(--h);
-  background: var(--color-yellow-soft);
+  background: linear-gradient(#F2B705, #D9D9D9);
   transition: background 0.2s;
-}
-
-.chart-bar:last-child .bar {
-  background: var(--color-accent-deep);
+  border-top-left-radius: 30px;
+  border-top-right-radius: 30px;
 }
 
 .chart-bar .bar-label {
