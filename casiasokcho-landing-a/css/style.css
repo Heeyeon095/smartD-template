@@ -2323,7 +2323,7 @@ body {
   display: flex;
   justify-content: center;
   width: 35%;
-  background-image: url(../images/sub/consult-bg.png);
+  background-image: url(../images/sub/consult-bg.jpg);
   background-size: cover;
   background-position: center;
 }
@@ -2521,7 +2521,7 @@ body {
   width: 100%;
   font-size: 16px;
   font-weight: 700;
-  color: #fff;
+  color: #555;
 }
 
 /* 전체 동의 */
@@ -2551,7 +2551,7 @@ body {
   .sec-consult {
     flex-direction: column;
     justify-content: flex-start;
-    background-image: url(../images/sub/consult-bg.png);
+    background-image: url(../images/sub/consult-bg.jpg);
     background-size: cover;
     background-position: center;
   }
@@ -2667,10 +2667,6 @@ body {
 
   .consult-form-box .agree-all label {
     color: #111;
-  }
-
-  .consult-form-box .checkbox-group label {
-    color: #555;
   }
 
   .consult-form .btn-primary {
@@ -2815,4 +2811,16 @@ body {
     margin-top: 30px;
     text-align: left;
   }
+}
+
+/* Aside (floating consult) */
+#layout-aside {position: fixed; right: 30px; bottom: 30px; z-index: 9;}
+#layout-aside .aside-btns {display: flex; flex-direction: column; gap: 15px;}
+#layout-aside .aside-btns li a {display: flex; flex-direction: column; justify-content: center; align-items: center; width: 56px; height: 56px; border-radius: 15px; overflow: hidden;}
+#layout-aside .aside-btns li.btn-kakao a {display: none; background: #FFE812; cursor: pointer;}
+#layout-aside .aside-btns li.btn-talk a {background: #805E3D; cursor: pointer;}
+
+@media screen and (max-width: 480px) {
+  #layout-aside {right: 20px; bottom: 20px;}
+  #layout-aside .aside-btns li a {width: 46px; height: 46px;}
 }
