@@ -1,5 +1,19 @@
 // CASSIA SOKCHO LANDING — A (BLACK)
 
+/* ===== FOOTER OWNER INFO ===== */
+(function () {
+  var widget = document.querySelector('script[data-channel-token]');
+  if (!widget) return;
+  var name = widget.dataset.customName;
+  var phone = widget.dataset.customPhone;
+  document.querySelectorAll('[data-owner="name"]').forEach(function (el) {
+    if (name) el.textContent = name;
+  });
+  document.querySelectorAll('[data-owner="phone"]').forEach(function (el) {
+    if (phone) el.textContent = phone;
+  });
+})();
+
 /* ===== MERIT SWIPER ===== */
 (function () {
   var meritEl = document.getElementById('meritSwiper');

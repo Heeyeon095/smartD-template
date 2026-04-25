@@ -52,8 +52,8 @@ body {
   padding: 18px 36px;
   background: var(--color-accent);
   color: var(--color-text);
-  font-size: 15px;
-  font-weight: 600;
+  font-size: 20px;
+  font-weight: 700;
   text-align: center;
   letter-spacing: 0.04em;
   transition: background 0.2s;
@@ -379,8 +379,6 @@ body {
   grid-template-columns: repeat(3, 1fr);
   margin: 70px 0;
   padding: 0 70px;
-  border-top: 1px solid #656565;
-  border-bottom: 1px solid #656565;
 }
 
 .merit-pair {
@@ -408,38 +406,15 @@ body {
   border-bottom: 1px solid #656565;
 }
 
-.merit-item:last-child {
-  border-bottom: none;
-}
-
 .merit-item--head {
   min-height: 200px;
   position: relative;
-}
-
-/* 가로선 양쪽 끝 연장 (grid padding 70px 영역 덮기) */
-.merit-pair:first-child .merit-item--head::before {
-  content: '';
-  position: absolute;
-  left: -70px;
-  bottom: -1px;
-  width: 70px;
-  height: 1px;
-  background: #656565;
-}
-
-.merit-pair:last-child .merit-item--head::after {
-  content: '';
-  position: absolute;
-  right: -70px;
-  bottom: -1px;
-  width: 70px;
-  height: 1px;
-  background: #656565;
+  border-top: 1px solid #656565;
 }
 
 .merit-item--body {
   min-height: 160px;
+  border-bottom: 1px solid #656565;
 }
 
 /* Hotel Owner */
@@ -511,7 +486,7 @@ body {
 
 /* 설명 텍스트 */
 .merit-body-title {
-  font-size: 20px;
+  font-size: 18px;
   font-weight: 700;
   line-height: 160%;
   color: #e0e0e0;
@@ -567,22 +542,23 @@ body {
   }
 
   .merit-pair {
-    border: 1px solid #656565;
-    border-left: none;
-    border-top: none;
-    border-right: none;
     padding: 0 30px;
+  }
+
+  .merit-grid .merit-pair:last-child .merit-item--body {
+    border-bottom: 1px solid #656565;
   }
 
   .merit-grid .merit-pair:first-child {
     border-left: none;
+    border-bottom: none;
   }
 
   .merit-grid .merit-pair .merit-item {
     padding: 28px 24px !important;
-    border-bottom: none;
     min-height: unset;
     border-left: 1px solid #656565;
+    border-bottom: none;
   }
 
   .merit-pair .merit-item:first-child {
@@ -590,7 +566,6 @@ body {
   }
 
   .merit-pair .merit-item:last-child {
-    border-bottom: none;
     padding-top: 30px !important;
   }
 
@@ -885,7 +860,6 @@ body {
 .benefit-table .row-total td {
   font-weight: 700;
   color: #fff;
-  border-bottom: none;
 }
 
 .benefit-table .badge {
@@ -906,7 +880,6 @@ body {
   background: var(--color-accent);
   color: #fff;
   text-align: center;
-  font-size: 16px;
   font-weight: 700;
   text-decoration: none;
 }
@@ -993,6 +966,10 @@ body {
     border-bottom: 1px solid rgba(255, 255, 255, 0.14);
   }
 
+  .benefit-table .benefit-pc-text {
+    display: none;
+  }
+
   .benefit-table .row-highlight .cell-category .badge {
     background: var(--color-accent);
     color: #fff;
@@ -1013,14 +990,14 @@ body {
 
   .sec-benefit .btn-primary {
     padding: 18px;
-    font-size: 15px;
+    font-size: 16px;
   }
 }
 
 /* ===== EFFICIENCY ===== */
 .sec-efficiency {
   position: relative;
-  padding: 120px 0 0;
+  padding: 120px 0 70px;
   background: #0d0d0d;
   overflow: hidden;
 }
@@ -1073,8 +1050,6 @@ body {
   grid-template-columns: repeat(3, 1fr);
   padding: 0 90px;
   width: 100%;
-  border-top: 1px solid #656565;
-  border-bottom: 1px solid #656565;
 }
 
 .efficiency-card {
@@ -1086,10 +1061,19 @@ body {
   aspect-ratio: 1 / 1;
   padding: 40px;
   background: transparent;
-  border-right: 1px solid #656565;
+  border: 1px solid #656565;
+  border-left: none;
   text-align: center;
   color: #fff;
   position: relative;
+}
+
+.efficiency-card:first-child {
+  border-left: 1px solid #656565;
+}
+
+.efficiency-card:last-child {
+  border-bottom: 1px solid #656565;
 }
 
 .efficiency-card--accent {
@@ -1178,12 +1162,11 @@ body {
 
 @media (max-width: 767px) {
   .sec-efficiency {
-    padding: 70px 0 0;
+    padding: 70px 0 50px;
   }
 
   .sec-efficiency .inner {
     padding: 0px;
-    border-top: 1px solid #656565;
   }
 
   .efficiency-header {
@@ -1193,7 +1176,6 @@ body {
     margin: 0 20px;
     padding: 20px;
     max-width: none;
-    border: 1px solid #656565;
     border-top: none;
     border-bottom: none;
   }
@@ -1209,7 +1191,7 @@ body {
   }
 
   .sec-efficiency .sec-title {
-    font-size: 34px;
+    font-size: 30px;
     line-height: 1.25;
   }
 
@@ -1222,7 +1204,6 @@ body {
   .efficiency-grid {
     grid-template-columns: 1fr;
     padding: 0 20px;
-    border-top: 1px solid #656565;
   }
 
   .efficiency-card {
@@ -1235,7 +1216,6 @@ body {
     text-align: left;
     border-right: none;
     border: 1px solid #656565;
-    border-top: none;
     border-bottom: none;
   }
 
@@ -1272,37 +1252,6 @@ body {
     font-size: 14px;
     line-height: 1.5;
   }
-
-  .efficiency-watermark-wrap {
-    padding: 0 20px;
-  }
-
-  .efficiency-watermark-wrap>div {
-    height: 80px;
-    border-right: none;
-    border-top: none;
-  }
-
-  .efficiency-watermark-wrap>div:first-child,
-  .efficiency-watermark-wrap>div:nth-child(2) {
-    display: none;
-  }
-
-  .efficiency-watermark-wrap>div:nth-child(3) {
-    border-left: 1px solid #656565;
-  }
-
-  .efficiency-watermark-wrap>div:nth-child(6) {
-    border-right: 1px solid #656565;
-  }
-
-  .efficiency-watermark-wrap .efficiency-watermark {
-    bottom: -28px;
-  }
-
-  .efficiency-watermark img {
-    transform: translateY(35%);
-  }
 }
 
 /* ===== ROOM ===== */
@@ -1318,7 +1267,7 @@ body {
 }
 
 .room-intro .sec-eyebrow {
-  font-size: 15px;
+  font-size: 20px;
   color: var(--color-sub);
   margin-bottom: 14px;
   letter-spacing: 0.02em;
@@ -1332,7 +1281,7 @@ body {
 }
 
 .room-desc {
-  font-size: 15px;
+  font-size: 20px;
   line-height: 1.8;
   color: var(--color-sub);
 }
@@ -1352,7 +1301,7 @@ body {
 }
 
 .room-level-tagline {
-  font-size: 14px;
+  font-size: 20px;
   color: var(--color-sub);
 }
 
@@ -1491,7 +1440,6 @@ body {
   width: 100%;
   min-width: 0;
   padding: 22px 28px;
-  font-size: 16px;
 }
 
 /* ===== ROOM LIGHTBOX ===== */
@@ -2157,6 +2105,10 @@ body {
     font-size: 12px;
   }
 
+  .facility-card-info {
+    padding: 0px;
+  }
+
   .facility-card-nav {
     left: 14px;
     right: 14px;
@@ -2202,6 +2154,10 @@ body {
   .facility-hero .facility-static-img {
     min-height: 240px;
     height: 240px;
+  }
+
+  .facility-tab-desc.is-active>span {
+    display: block;
   }
 }
 
@@ -2287,7 +2243,8 @@ body {
 
 @media (max-width: 767px) {
   .sec-compare {
-    padding: 50px 20px;
+    padding: 70px 20px;
+    text-align: left;
   }
 
   .sec-compare .inner {
@@ -2297,35 +2254,100 @@ body {
   .sec-compare .sec-eyebrow {
     font-size: 18px;
     margin-bottom: 8px;
+    text-align: center;
   }
 
   .sec-compare .sec-title {
     font-size: 28px;
     line-height: 1.25;
+    margin-bottom: 30px;
+    text-align: center;
   }
 
   .sec-compare .sec-desc {
     margin-top: 20px;
     font-size: 16px;
     line-height: 1.7;
+    text-align: center;
   }
 
   .compare-table-wrap {
-    padding: 0px;
+    background: transparent;
+    padding: 0;
     margin-top: 30px;
+    margin-bottom: 20px;
+    overflow-x: visible;
   }
 
-  .compare-table {
-    font-size: 20px;
-    line-height: 1.4;
+  .compare-table,
+  .compare-table tbody,
+  .compare-table tr,
+  .compare-table td {
+    display: block;
+    width: 100%;
   }
 
-  .compare-table thead .col-highlight:first-child {
-    width: 20%;
+  .compare-table thead {
+    display: none;
   }
 
-  .compare-table thead .col-highlight:last-child {
-    width: 35%;
+  .compare-table tr {
+    background: rgba(20, 20, 22, 0.72);
+    border: 1px solid #656565;
+    padding: 18px 20px;
+    margin-bottom: 14px;
+  }
+
+  .compare-table td {
+    padding: 10px 0;
+    border: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    font-size: 16px;
+    text-align: left;
+  }
+
+  .compare-table td:first-child {
+    padding: 4px 0 14px;
+  }
+
+  .compare-table td:last-child {
+    border-bottom: none;
+    padding-bottom: 4px;
+  }
+
+  .compare-table td[data-label]::before {
+    content: attr(data-label);
+    color: #a6a6a6;
+    font-weight: 400;
+  }
+
+  .compare-table .cell-category {
+    font-size: 16px;
+    font-weight: 700;
+    color: #fff;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.14);
+  }
+
+  .compare-table tr td:last-child {
+    font-weight: 400;
+  }
+}
+
+@media (max-width: 400px) {
+  .compare-table td:not(.cell-category) {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+    color: #fff;
+  }
+
+  .compare-table td[data-label]::before {
+    font-size: 13px;
+    line-height: 1.3;
   }
 }
 
@@ -2495,7 +2517,7 @@ body {
 }
 
 .terms-box h4 {
-  font-size: 12px;
+  font-size: 14px;
   font-weight: 600;
   color: var(--color-sub);
   margin-bottom: 6px;
@@ -2506,7 +2528,7 @@ body {
 }
 
 .terms-box ul li {
-  font-size: 11px;
+  font-size: 12px;
   color: var(--color-muted);
   line-height: 1.7;
   list-style: disc;
@@ -2540,7 +2562,7 @@ body {
   width: 100%;
   font-size: 16px;
   font-weight: 700;
-  color: #555;
+  color: #333;
 }
 
 /* 전체 동의 */
@@ -2549,7 +2571,7 @@ body {
   padding: 16px 0;
 }
 
-.agree-all label {
+.checkbox-group.agree-all label {
   font-size: 16px;
   font-weight: 600;
   color: var(--color-text);
@@ -2708,6 +2730,10 @@ body {
     padding-top: 0px;
     border-bottom: 1px solid var(--color-line);
     background-color: #fff;
+  }
+
+  .checkbox-group {
+    padding-left: 0px;
   }
 }
 
