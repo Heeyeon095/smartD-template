@@ -1,5 +1,19 @@
 // CASSIA SOKCHO LANDING — B (YELLOW)
 
+/* ===== FOOTER OWNER INFO ===== */
+(function () {
+  var widget = document.querySelector('script[data-channel-token]');
+  if (!widget) return;
+  var name = widget.dataset.customName;
+  var phone = widget.dataset.customPhone;
+  document.querySelectorAll('[data-owner="name"]').forEach(function (el) {
+    if (name) el.textContent = name;
+  });
+  document.querySelectorAll('[data-owner="phone"]').forEach(function (el) {
+    if (phone) el.textContent = phone;
+  });
+})();
+
 /* ===== PREMIUM 01 SWIPER (A안 merit-swiper 스타일) ===== */
 (function () {
   var swEl = document.getElementById('premium01Swiper');
@@ -40,6 +54,69 @@
   updateCounter(0);
 })();
 
+/* ===== PREMIUM 02 NIGHT SWIPER (mobile only) ===== */
+(function () {
+  var el = document.getElementById('nightSwiper');
+  if (!el || !window.Swiper) return;
+
+  var nightSwiper = null;
+  var mql = window.matchMedia('(max-width: 767px)');
+
+  function sync() {
+    if (mql.matches) {
+      if (!nightSwiper) {
+        nightSwiper = new Swiper('#nightSwiper', {
+          slidesPerView: 1,
+          spaceBetween: 16,
+          loop: true,
+          pagination: {
+            el: '.night-pagination',
+            clickable: true,
+          },
+        });
+      }
+    } else if (nightSwiper) {
+      nightSwiper.destroy(true, true);
+      nightSwiper = null;
+    }
+  }
+
+  sync();
+  if (mql.addEventListener) {
+    mql.addEventListener('change', sync);
+  } else if (mql.addListener) {
+    mql.addListener(sync);
+  }
+})();
+
+/* ===== PREMIUM 06 SWIPER (mobile only) ===== */
+(function () {
+  var el = document.getElementById('premium06Swiper');
+  if (!el || !window.Swiper) return;
+
+  var p06Swiper = null;
+  var mql = window.matchMedia('(max-width: 767px)');
+
+  function sync() {
+    if (mql.matches) {
+      if (!p06Swiper) {
+        p06Swiper = new Swiper('#premium06Swiper', {
+          slidesPerView: 'auto',
+          spaceBetween: 12,
+          grabCursor: true,
+        });
+      }
+    } else if (p06Swiper) {
+      p06Swiper.destroy(true, true);
+      p06Swiper = null;
+    }
+  }
+
+  sync();
+  if (mql.addEventListener) mql.addEventListener('change', sync);
+  else if (mql.addListener) mql.addListener(sync);
+})();
+
 /* ===== PREMIUM 07 SWIPER ===== */
 (function () {
   var el = document.getElementById('premium07Swiper');
@@ -53,6 +130,16 @@
     navigation: {
       prevEl: '.btn-premium07-prev',
       nextEl: '.btn-premium07-next',
+    },
+    breakpoints: {
+      0: {
+        slidesPerView: 'auto',
+        spaceBetween: 12,
+      },
+      768: {
+        slidesPerView: 1,
+        spaceBetween: 0,
+      }
     }
   });
 })();
