@@ -1,19 +1,5 @@
 // CASSIA SOKCHO LANDING — B (YELLOW)
 
-/* ===== FOOTER OWNER INFO ===== */
-(function () {
-  var widget = document.querySelector('script[data-channel-token]');
-  if (!widget) return;
-  var name = widget.dataset.customName;
-  var phone = widget.dataset.customPhone;
-  document.querySelectorAll('[data-owner="name"]').forEach(function (el) {
-    if (name) el.textContent = name;
-  });
-  document.querySelectorAll('[data-owner="phone"]').forEach(function (el) {
-    if (phone) el.textContent = phone;
-  });
-})();
-
 /* ===== PREMIUM 01 SWIPER (A안 merit-swiper 스타일) ===== */
 (function () {
   var swEl = document.getElementById('premium01Swiper');
