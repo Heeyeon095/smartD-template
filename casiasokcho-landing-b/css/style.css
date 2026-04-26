@@ -3781,9 +3781,9 @@ body {
 /* --- Tabs + Nav --- */
 .sec-room .room-tabs-row {
   display: flex;
-  align-items: center;
+  align-items: flex-end;
   justify-content: space-between;
-  gap: 24px;
+  gap: 40px;
   padding-top: 0;
   border-top: 0;
   margin-bottom: 40px;
@@ -3792,6 +3792,8 @@ body {
 .sec-room .room-tabs {
   display: flex;
   flex: 1;
+  min-width: 0;
+  gap: 0;
   position: relative;
   padding-top: 16px;
   border-top: 1px solid #D4D4D4;
@@ -3799,8 +3801,9 @@ body {
 
 .sec-room .room-tab {
   position: relative;
-  flex: 0 0 auto;
-  width: 33%;
+  flex: 1 1 0;
+  min-width: 0;
+  width: auto;
   padding: 10px 0;
   background: transparent;
   border: 0;
@@ -3809,6 +3812,7 @@ body {
   font-size: 18px;
   font-weight: 500;
   letter-spacing: 0.08em;
+  text-align: left;
   cursor: pointer;
   transition: color 0.2s;
 }

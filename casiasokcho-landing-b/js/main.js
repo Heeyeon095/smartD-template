@@ -157,12 +157,6 @@
       speed: 500,
       grabCursor: true,
       allowTouchMove: true,
-      observer: true,
-      observeParents: true,
-      navigation: {
-        prevEl: '.btn-room-prev',
-        nextEl: '.btn-room-next',
-      },
       on: {
         slideChange: function () {
           syncLevel(this.activeIndex);
@@ -171,11 +165,33 @@
     });
 
     tabs.forEach(function (tab) {
-      tab.addEventListener('click', function () {
-        const idx = Number(tab.dataset.idx);
+      tab.addEventListener('click', function (e) {
+        e.preventDefault();
+        const idx = Number(e.currentTarget.dataset.idx);
+        if (Number.isNaN(idx)) return;
         roomSwiper.slideTo(idx);
+        syncLevel(idx);
       });
     });
+
+    const prevBtn = document.querySelector('.btn-room-prev');
+    const nextBtn = document.querySelector('.btn-room-next');
+    if (prevBtn) {
+      prevBtn.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = Math.max(0, roomSwiper.activeIndex - 1);
+        roomSwiper.slideTo(target);
+        syncLevel(target);
+      });
+    }
+    if (nextBtn) {
+      nextBtn.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = Math.min(tabs.length - 1, roomSwiper.activeIndex + 1);
+        roomSwiper.slideTo(target);
+        syncLevel(target);
+      });
+    }
 
     const lightbox = document.getElementById('roomLightbox');
     const lightboxSwiperEl = document.getElementById('roomLightboxSwiper');
