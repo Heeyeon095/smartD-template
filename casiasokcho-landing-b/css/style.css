@@ -2535,11 +2535,13 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 1px solid rgba(255, 255, 255, 0.25);
+  border: 1px solid #656565;
   border-radius: 50%;
   background: transparent;
   cursor: pointer;
   transition: border-color 0.2s, background 0.2s;
+  filter: grayscale(100%) brightness(0%);
+  opacity: 0.8;
 }
 
 .btn-room-prev:hover,
@@ -3840,21 +3842,6 @@ body {
   display: flex;
   gap: 8px;
   flex-shrink: 0;
-}
-
-.sec-room .btn-room-prev,
-.sec-room .btn-room-next {
-  width: 36px;
-  height: 36px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border: 1px solid #e0e0e0;
-  background-color: #e0e0e0;
-  color: #666;
-  border-radius: 50%;
-  cursor: pointer;
-  transition: background 0.2s, border-color 0.2s;
 }
 
 .sec-room .btn-room-prev img,
