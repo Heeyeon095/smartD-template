@@ -469,6 +469,7 @@ body {
   padding: 160px 90px;
   height: 864px;
   background: #ffffff;
+  overflow: hidden;
 }
 
 .premium02-inner {
