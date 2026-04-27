@@ -269,7 +269,7 @@
   }
 
   /* ===== CONSULT FORM ===== */
-  var SALES_BASE = 'https://cassia.bunpil.com';
+  var SALES_BASE = '';
   var CONSULT_ENDPOINT = SALES_BASE + '/ajax/contact/request';
   var CONSULT_PAYLOAD = { type: 's', cpnNo: 1, userNo: 1632 };
 

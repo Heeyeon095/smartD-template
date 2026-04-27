@@ -2453,7 +2453,7 @@ body {
   background: #fff;
   border: 1px solid var(--color-line);
   border-bottom-color: rgba(255, 255, 255, 0.2);
-  color: var(--color-text);
+  color: #111;
   font-size: 15px;
   font-family: inherit;
   outline: none;
@@ -2461,7 +2461,7 @@ body {
 }
 
 .form-row input:focus {
-  border-color: rgba(255, 255, 255, 0.5);
+  border-color: #0C3147;
 }
 
 .form-row input::placeholder {
