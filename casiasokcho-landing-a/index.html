@@ -617,7 +617,13 @@
       <div class="inner">
         <div class="consult-layout">
           <div class="consult-form-wrap">
-            <form id="consultForm" class="consult-form" novalidate>
+            <form
+              id="consultForm"
+              class="consult-form"
+              data-user-no="$(OWNER-ID)"
+              data-campaign-no="$(CAMPAIGN-ID)"
+              novalidate
+            >
               <div class="consult-form-box">
               <div class="form-row">
                 <label for="consultName">성함<span class="required">*</span></label>
