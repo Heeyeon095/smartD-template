@@ -323,7 +323,7 @@
       var payload = Object.assign({}, CONSULT_PAYLOAD, {
         name: name,
         phone: phone,
-        cnNo: e.target.dataset.campaignNo,
+        cpnNo: e.target.dataset.campaignNo,
         userNo: e.target.dataset.userNo,
         CC19001: 'Y',
         CC19002: 'Y'
