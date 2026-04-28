@@ -33,6 +33,8 @@ body {
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
   overflow-x: hidden;
+  word-break: keep-all;
+  overflow-wrap: break-word;
 }
 
 .inner {
@@ -1941,10 +1943,6 @@ body {
   .facility-disclaimer {
     margin-top: 32px;
     font-size: 12px;
-  }
-
-  .facility-card-info {
-    padding: 0px;
   }
 
   .facility-card-nav {
