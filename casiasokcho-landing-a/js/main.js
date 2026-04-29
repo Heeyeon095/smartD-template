@@ -1,5 +1,10 @@
 // CASSIA SOKCHO LANDING — A (BLACK)
 
+/* ===== Prevent native image drag ghost ===== */
+document.addEventListener('dragstart', function (e) {
+  if (e.target && e.target.tagName === 'IMG') e.preventDefault();
+});
+
 /* ===== MERIT SWIPER ===== */
 (function () {
   var meritEl = document.getElementById('meritSwiper');

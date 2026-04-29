@@ -1,5 +1,10 @@
 // CASSIA SOKCHO LANDING — B (YELLOW)
 
+/* ===== Prevent native image drag ghost ===== */
+document.addEventListener('dragstart', function (e) {
+  if (e.target && e.target.tagName === 'IMG') e.preventDefault();
+});
+
 /* ===== PREMIUM 01 SWIPER (A안 merit-swiper 스타일) ===== */
 (function () {
   var swEl = document.getElementById('premium01Swiper');
@@ -40,38 +45,65 @@
   updateCounter(0);
 })();
 
-/* ===== PREMIUM 02 NIGHT SWIPER (mobile only) ===== */
+/* ===== PREMIUM 02 NIGHT SWIPER (mobile horizontal + PC vertical) ===== */
 (function () {
   var el = document.getElementById('nightSwiper');
   if (!el || !window.Swiper) return;
 
   var nightSwiper = null;
-  var mql = window.matchMedia('(max-width: 767px)');
+  var currentMode = null;
+  var mobileMql = window.matchMedia('(max-width: 767px)');
+  var pcMql = window.matchMedia('(min-width: 1200px)');
+
+  function getMode() {
+    if (mobileMql.matches) return 'mobile';
+    if (pcMql.matches) return 'pc';
+    return 'tablet';
+  }
 
   function sync() {
-    if (mql.matches) {
-      if (!nightSwiper) {
-        nightSwiper = new Swiper('#nightSwiper', {
-          slidesPerView: 1,
-          spaceBetween: 16,
-          loop: true,
-          pagination: {
-            el: '.night-pagination',
-            clickable: true,
-          },
-        });
-      }
-    } else if (nightSwiper) {
+    var mode = getMode();
+    if (mode === currentMode) return;
+
+    if (nightSwiper) {
       nightSwiper.destroy(true, true);
       nightSwiper = null;
     }
+
+    if (mode === 'mobile') {
+      nightSwiper = new Swiper('#nightSwiper', {
+        slidesPerView: 1,
+        spaceBetween: 16,
+        loop: true,
+        pagination: {
+          el: '.night-pagination',
+          clickable: true,
+        },
+      });
+    } else if (mode === 'pc') {
+      nightSwiper = new Swiper('#nightSwiper', {
+        direction: 'vertical',
+        slidesPerView: 'auto',
+        spaceBetween: 32,
+        loop: true,
+        pagination: {
+          el: '.night-pagination',
+          clickable: true,
+        },
+      });
+    }
+
+    currentMode = mode;
   }
 
   sync();
-  if (mql.addEventListener) {
-    mql.addEventListener('change', sync);
-  } else if (mql.addListener) {
-    mql.addListener(sync);
+  var listener = function () { sync(); };
+  if (mobileMql.addEventListener) {
+    mobileMql.addEventListener('change', listener);
+    pcMql.addEventListener('change', listener);
+  } else if (mobileMql.addListener) {
+    mobileMql.addListener(listener);
+    pcMql.addListener(listener);
   }
 })();
 

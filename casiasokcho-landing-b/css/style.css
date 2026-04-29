@@ -455,7 +455,11 @@ body {
   width: 100%;
 }
 
-.night-swiper .night-pagination {
+.premium02-right {
+  position: relative;
+}
+
+.night-pagination {
   display: none;
 }
 
@@ -473,7 +477,7 @@ body {
   display: block;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 768px) and (max-width: 1199px) {
   .night-swiper {
     overflow: visible;
   }
@@ -483,6 +487,45 @@ body {
     flex-direction: column;
     gap: 32px;
     transform: none;
+  }
+}
+
+@media (min-width: 1200px) {
+  .night-swiper {
+    height: 704px;
+    overflow: hidden;
+    cursor: grab;
+  }
+
+  .night-swiper:active {
+    cursor: grabbing;
+  }
+
+  .night-pagination.swiper-pagination {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    position: absolute;
+    right: -20px;
+    left: auto;
+    top: 50%;
+    transform: translateY(-50%);
+    width: auto;
+    z-index: 10;
+  }
+
+  .night-pagination .swiper-pagination-bullet {
+    width: 10px;
+    height: 10px;
+    background: rgba(0, 0, 0, 0.25);
+    opacity: 1;
+    margin: 0 !important;
+    cursor: pointer;
+    transition: background 0.2s ease;
+  }
+
+  .night-pagination .swiper-pagination-bullet-active {
+    background: var(--color-primary, #d9a521);
   }
 }
 
@@ -746,6 +789,36 @@ body {
   .premium06-swiper .swiper-wrapper.premium06-stack {
     transform: none;
   }
+
+  .premium06-stack {
+    transition: grid-template-rows 0.22s ease;
+  }
+
+  .infra-card {
+    cursor: pointer;
+  }
+
+  .premium06-stack:has(.infra-card:nth-child(2):hover) {
+    grid-template-rows: 120px 420px 120px;
+  }
+
+  .premium06-stack:has(.infra-card:nth-child(3):hover) {
+    grid-template-rows: 120px 120px 420px;
+  }
+
+  .premium06-stack:has(.infra-card:nth-child(2):hover) .infra-card:nth-child(1) .infra-card-body,
+  .premium06-stack:has(.infra-card:nth-child(3):hover) .infra-card:nth-child(1) .infra-card-body {
+    top: 50%;
+    bottom: auto;
+    transform: translateY(-50%);
+  }
+
+  .premium06-stack:has(.infra-card:nth-child(2):hover) .infra-card:nth-child(2) .infra-card-body,
+  .premium06-stack:has(.infra-card:nth-child(3):hover) .infra-card:nth-child(3) .infra-card-body {
+    top: auto;
+    bottom: 40px;
+    transform: none;
+  }
 }
 
 .infra-card {
@@ -763,7 +836,8 @@ body {
 .infra-card-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, rgba(0, 0, 0, 0.25) 0%, rgba(0, 0, 0, 0.55) 100%);
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.12) 55%, rgba(0, 0, 0, 0.5) 100%);
+  pointer-events: none;
 }
 
 .infra-card-body {
@@ -1180,20 +1254,23 @@ body {
 
   .night-swiper {
     overflow: hidden;
-    padding-bottom: 32px;
   }
 
-  .night-swiper .night-pagination {
-    display: block;
-    bottom: 0;
+  .night-pagination {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    position: static;
+    width: 100%;
+    padding-top: 16px;
   }
 
-  .night-swiper .night-pagination .swiper-pagination-bullet {
+  .night-pagination .swiper-pagination-bullet {
     background: rgba(0, 0, 0, 0.25);
     opacity: 1;
   }
 
-  .night-swiper .night-pagination .swiper-pagination-bullet-active {
+  .night-pagination .swiper-pagination-bullet-active {
     background: var(--color-primary, #d9a521);
   }
 
@@ -2455,9 +2532,15 @@ body {
   padding: 120px 0;
   overflow: hidden;
   text-align: center;
-  background-image: url(../images/sub/b-compare-bg.jpg);
-  background-size: cover;
-  background-position: center;
+}
+
+.sec-compare .sec-compare-bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
 }
 
 .sec-compare .inner {
@@ -2695,12 +2778,25 @@ body {
 }
 
 .sec-consult .consult-image {
+  position: relative;
   display: flex;
   justify-content: center;
   width: 35%;
-  background-image: url(../images/sub/consult-bg.jpg);
-  background-size: cover;
-  background-position: center;
+  overflow: hidden;
+}
+
+.sec-consult .consult-image .consult-image-bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
+
+.sec-consult .consult-image .consult-text {
+  position: relative;
+  z-index: 1;
 }
 
 .sec-consult .inner {
@@ -2925,13 +3021,10 @@ body {
   .sec-consult {
     flex-direction: column;
     justify-content: flex-start;
-    background-image: url(../images/sub/consult-bg.jpg);
-    background-size: cover;
-    background-position: center;
   }
 
   .sec-consult .consult-image {
-    margin-bottom: 50px;
+    padding-bottom: 50px;
     width: 100%;
     background: rgba(0, 0, 0, 0);
   }
