@@ -52,17 +52,10 @@ document.addEventListener('dragstart', function (e) {
 
   var nightSwiper = null;
   var currentMode = null;
-  var mobileMql = window.matchMedia('(max-width: 767px)');
   var pcMql = window.matchMedia('(min-width: 1200px)');
 
-  function getMode() {
-    if (mobileMql.matches) return 'mobile';
-    if (pcMql.matches) return 'pc';
-    return 'tablet';
-  }
-
   function sync() {
-    var mode = getMode();
+    var mode = pcMql.matches ? 'pc' : 'mobile';
     if (mode === currentMode) return;
 
     if (nightSwiper) {
@@ -80,7 +73,7 @@ document.addEventListener('dragstart', function (e) {
           clickable: true,
         },
       });
-    } else if (mode === 'pc') {
+    } else {
       nightSwiper = new Swiper('#nightSwiper', {
         direction: 'vertical',
         slidesPerView: 'auto',
@@ -97,13 +90,10 @@ document.addEventListener('dragstart', function (e) {
   }
 
   sync();
-  var listener = function () { sync(); };
-  if (mobileMql.addEventListener) {
-    mobileMql.addEventListener('change', listener);
-    pcMql.addEventListener('change', listener);
-  } else if (mobileMql.addListener) {
-    mobileMql.addListener(listener);
-    pcMql.addListener(listener);
+  if (pcMql.addEventListener) {
+    pcMql.addEventListener('change', sync);
+  } else if (pcMql.addListener) {
+    pcMql.addListener(sync);
   }
 })();
 
